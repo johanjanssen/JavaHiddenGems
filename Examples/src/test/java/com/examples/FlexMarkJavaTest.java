@@ -42,6 +42,6 @@ public class FlexMarkJavaTest {
         Parser parser = Parser.builder(options).build();
         Node document = parser.parse(markdown);
         visitor.visit(document);
-        assertEquals(64, topicCount);
+        assertEquals(65, topicCount);
     }
 }

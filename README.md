@@ -29,6 +29,7 @@ https://github.com/DominoKit
 
 ## Eclipse Deeplearning4j
 https://projects.eclipse.org/proposals/eclipse-deeplearning4j
+https://www.rcp-vision.com/build-your-first-neural-network-with-eclipse-deeplearning4j/
 
 ## EqualsVerifier
 https://jqno.nl/equalsverifier/
@@ -178,6 +179,9 @@ https://github.com/resilience4j/resilience4j
 
 ## RESTEasy
 https://github.com/resteasy/Resteasy
+
+## Retrofit
+https://square.github.io/retrofit/
 
 ## ShedLock
 https://github.com/lukas-krecan/ShedLock

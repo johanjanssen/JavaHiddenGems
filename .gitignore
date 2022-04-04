@@ -162,3 +162,4 @@ buildNumber.properties
 kcore_5.json
 
 .idea
+*.iml
