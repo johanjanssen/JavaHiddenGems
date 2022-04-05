@@ -225,6 +225,33 @@
         </dependency>
         <!-- End RESTEasy -->
 
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.143</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.moditect.jfrunit</groupId>
+            <artifactId>jfrunit-core</artifactId>
+            <version>1.0.0.Alpha2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Also see application.properties -->
+        <dependency>
+            <groupId>org.jobrunr</groupId>
+            <artifactId>jobrunr-spring-boot-starter</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+
         <!-- graphql -->
         <dependency>
             <groupId>com.graphql-java</groupId>
@@ -248,6 +275,8 @@
             <scope>provided</scope>
         </dependency>
         <!-- End graphql -->
+
+
     </dependencies>
 
     <build>

@@ -24,4 +24,23 @@ jshell --class-path .
 
 # /exit
 
+jbang init ThisIsTheWay.java
+jbang ThisIsTheWay.java
 
+jbang init -t cli ExampleCLI.java
+jbang ExampleCLI.java hellow
+# Add dependencies after /DEPS in the ExampleCLI.java file: com.googlecode.libphonenumber:libphonenumber:8.12.46
+
+# Add:
+
+# import com.google.i18n.phonenumbers.PhoneNumberUtil;
+# import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
+
+# private PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+
+# System.out.println("Hello " + greeting);
+# PhoneNumber parsedNumber = phoneNumberUtil.parse(greeting, "NL");
+# System.out.println("Phone number is valid: " + phoneNumberUtil.isValidNumber(parsedNumber));
+
+# jbang ExampleCLI.java hellow
+# jbang ExampleCLI.java 0612345678

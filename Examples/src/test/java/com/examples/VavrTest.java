@@ -1,6 +1,9 @@
 package com.examples;
 
-import io.vavr.*;
+import io.vavr.Function8;
+import io.vavr.Lazy;
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
 import io.vavr.collection.List;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
