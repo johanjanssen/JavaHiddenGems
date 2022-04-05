@@ -177,6 +177,8 @@ https://docs.renovatebot.com/java/
 ## Resilience4j
 https://github.com/resilience4j/resilience4j
 
+## REST Assured
+
 ## RESTEasy
 https://github.com/resteasy/Resteasy
 
@@ -192,6 +194,9 @@ https://sdkman.io/
 ## Spark
 https://spark.apache.org/
 
+## Testcontainers
+https://www.testcontainers.org/
+
 ## Togglz
 https://www.togglz.org/
 
@@ -204,4 +209,6 @@ https://github.com/update4j/update4j
 ## Vavr
 https://www.vavr.io/
 
+## Wiremock
+http://wiremock.org
 

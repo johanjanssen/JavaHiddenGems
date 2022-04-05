@@ -12,12 +12,16 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FlexMarkJavaTest {
     int topicCount = 0;
+    private Set<Character> uniqueStartingCharactersSet = new HashSet<>();
 
     NodeVisitor visitor = new NodeVisitor(
             new VisitHandler<>(Text.class, this::visit)
@@ -26,6 +30,10 @@ public class FlexMarkJavaTest {
     public void visit(Text text) {
         // This is called for all Text nodes. Override other visit methods for other node types.
         if (text.getParent().getChars().startsWith("##")) {
+            char firstCharacter = text.getChars().toLowerCase().charAt(0);
+            if (Character.isLetter(firstCharacter)) {
+                uniqueStartingCharactersSet.add(firstCharacter);
+            }
             topicCount++;
         }
         visitor.visitChildren(text);
@@ -41,6 +49,13 @@ public class FlexMarkJavaTest {
         Parser parser = Parser.builder(options).build();
         Node document = parser.parse(markdown);
         visitor.visit(document);
-        assertEquals(65, topicCount);
+        assertEquals(68, topicCount);
+        assertEquals(19, uniqueStartingCharactersSet.size());
+
+        //uniqueStartingCharactersSet.stream().forEach(System.out::print);
+        String alphabetString = uniqueStartingCharactersSet.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+        assertEquals("abcdefghjlmoprstuvw", alphabetString);
     }
 }
