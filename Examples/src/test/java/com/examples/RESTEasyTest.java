@@ -1,5 +1,6 @@
 package com.examples;
 
+import com.examples.jobrunr.JobrunrStorageConfiguration;
 import com.examples.shared.Car;
 import com.examples.shared.CarApplication;
 import com.examples.shared.CarPart;
@@ -22,8 +23,8 @@ import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {CarApplication.class, JobrunrStorageConfiguration.class})
 @DirtiesContext
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = CarApplication.class)
 public class RESTEasyTest {
     @LocalServerPort
     private int port;

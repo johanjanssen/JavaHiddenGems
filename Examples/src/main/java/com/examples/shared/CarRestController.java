@@ -18,11 +18,6 @@ public class CarRestController {
         carList.add(huayra);
     }
 
-//    @PostConstruct
-//    public void init() {
-//
-//    }
-
     @GetMapping("/car")
     public List<Car> retrieveCar() {
         return carList;

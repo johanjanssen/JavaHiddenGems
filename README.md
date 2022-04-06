@@ -80,6 +80,8 @@ https://github.com/moditect/jfrunit
 
 ## jlink
 https://www.baeldung.com/jlink
+https://access.redhat.com/documentation/en-us/openjdk/11/html/using_jlink_to_customize_java_runtime_environment/index
+
 
 ## jMolecules
 https://github.com/xmolecules/jmolecules

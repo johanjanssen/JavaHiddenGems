@@ -163,3 +163,7 @@ kcore_5.json
 
 .idea
 *.iml
+jlink-module/
+jlink-image/
+jpackagecustumjre/
+*.jar
