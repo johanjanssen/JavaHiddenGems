@@ -49,7 +49,7 @@ public class FlexMarkJavaTest {
         Parser parser = Parser.builder(options).build();
         Node document = parser.parse(markdown);
         visitor.visit(document);
-        assertEquals(68, topicCount);
+        assertEquals(70, topicCount);
         assertEquals(19, uniqueStartingCharactersSet.size());
 
         //uniqueStartingCharactersSet.stream().forEach(System.out::print);

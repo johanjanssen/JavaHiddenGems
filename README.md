@@ -1,5 +1,8 @@
 # JavaHiddenGems
 
+# Apache POI
+https://poi.apache.org/
+
 ## ArchUnit
 https://www.archunit.org/
 
@@ -45,6 +48,9 @@ https://www.graphql-java.com/
 
 ## Handlebars.java
 https://github.com/jknack/handlebars.java
+
+## iText
+https://itextpdf.com/en
 
 ## Jacoco
 https://www.jacoco.org/jacoco/ coverage unit test and running application

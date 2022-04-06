@@ -190,17 +190,6 @@
             <artifactId>rest-assured</artifactId>
             <version>4.5.1</version>
         </dependency>
-        <!-- To override old version which is incompatible with REST-assured -->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.groovy</groupId>-->
-<!--            <artifactId>groovy-xml</artifactId>-->
-<!--            <version>4.0.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.codehaus.groovy</groupId>-->
-<!--            <artifactId>groovy-xml</artifactId>-->
-<!--            <version>3.0.10</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
@@ -212,6 +201,26 @@
             <version>4.5.1</version>
         </dependency>
         <!-- End REST-assured -->
+
+        <!-- Apache POI -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+        <!-- End Apache POI -->
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.3</version>
+        </dependency>
+
 
         <!-- Retrofit -->
         <dependency>
