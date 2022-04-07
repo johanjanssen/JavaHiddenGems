@@ -88,7 +88,6 @@ https://github.com/moditect/jfrunit
 https://www.baeldung.com/jlink
 https://access.redhat.com/documentation/en-us/openjdk/11/html/using_jlink_to_customize_java_runtime_environment/index
 
-
 ## jMolecules
 https://github.com/xmolecules/jmolecules
 
@@ -150,6 +149,9 @@ https://micrometer.io/
 https://microstream.one/
 is a Java serializer that does not require you to implement an interface or put annotations in your classes. It's very fast and secure. Often used as persistence for microservices.
 
+## Moduliths
+https://github.com/moduliths/moduliths
+
 ## mvnd (Apache Maven Daemon)
 The [mvnd](https://github.com/apache/maven-mvnd)
 
@@ -186,6 +188,7 @@ https://docs.renovatebot.com/java/
 https://github.com/resilience4j/resilience4j
 
 ## REST Assured
+https://rest-assured.io/
 
 ## RESTEasy
 https://github.com/resteasy/Resteasy

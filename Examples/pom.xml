@@ -13,9 +13,19 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Examples</name>
     <description>Demo project for Spring Boot</description>
-    	<properties>
-    		<java.version>17</java.version>
-    	</properties>
+
+    <repositories>
+        <repository>
+            <id>repo</id>
+            <name>repo</name>
+            <url>https://github.com/johanjanssen/JavaHiddenGems</url>
+        </repository>
+    </repositories>
+
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -314,6 +324,57 @@
         </dependency>
         <!-- End Testcontainers -->
 
+        <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock-jre8</artifactId>
+            <version>2.32.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- MicroStream -->
+        <dependency>
+            <groupId>one.microstream</groupId>
+            <artifactId>microstream-storage-embedded</artifactId>
+            <version>06.01.00-MS-GA</version>
+        </dependency>
+        <dependency>
+            <groupId>one.microstream</groupId>
+            <artifactId>microstream-storage-embedded-configuration</artifactId>
+            <version>06.01.00-MS-GA</version>
+        </dependency>
+        <!-- End MicroStream -->
+
+        <!-- Shows Micrometer -->
+        <!-- See application.properties -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- End Micrometer -->
+
+        <!-- jOOQ -->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.16.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+            <version>3.16.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+            <version>3.16.5</version>
+        </dependency>
+        <!-- End jOOQ -->
+
+
         <!-- graphql -->
         <dependency>
             <groupId>com.graphql-java</groupId>
@@ -501,9 +562,9 @@
                     <to>
                         <image>javahiddengems</image>
                     </to>
-					<container>
-						<mainClass>com.examples.shared.CarApplication</mainClass>
-					</container>
+                    <container>
+                        <mainClass>com.examples.shared.CarApplication</mainClass>
+                    </container>
                 </configuration>
             </plugin>
 
@@ -513,6 +574,83 @@
             <!-- The result of the command: docker images. The size is mainly because of the huge amount of dependencies used for this project. -->
             <!-- buildpackjavahiddengems    ...   499MB -->
             <!-- javahiddengems             ...   512MB -->
+
+            <!-- See jqassistant\my-rules.adoc -->
+            <!-- It doesn't work out of the box due to the Neo4j version used to remain compatible https://jqassistant.github.io/jqassistant/doc/1.11.1/manual/#_maven-->
+            <plugin>
+                <groupId>com.buschmais.jqassistant</groupId>
+                <artifactId>jqassistant-maven-plugin</artifactId>
+                <version>1.12.0-M1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>scan</goal>
+                            <goal>analyze</goal>
+                        </goals>
+                        <configuration>
+                            <warnOnSeverity>MINOR</warnOnSeverity>
+                            <failOnSeverity>MAJOR</failOnSeverity>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- mvn jreleaser:config -->
+            <!-- mvn jreleaser:full-release -Djreleaser.dryrun=true -->
+            <!-- Configure JRELEASER_GITHUB_TOKEN environment variable with GitHub personal token -->
+            <plugin>
+                <groupId>org.jreleaser</groupId>
+                <artifactId>jreleaser-maven-plugin</artifactId>
+                <version>1.0.0-RC2</version>
+                <configuration>
+                    <gitRootSearch>true</gitRootSearch><!-- Needed as pom.xml is not in Git root directory -->
+                    <jreleaser>
+                        <release>
+                            <github>
+                                <changelog>
+                                    <enabled>true</enabled>
+                                    <formatted>ALWAYS</formatted>
+                                    <preset>gitmoji</preset>
+                                    <format>- {{commitShortHash}} {{commitTitle}}</format>
+                                </changelog>
+                            </github>
+                        </release>
+                    </jreleaser>
+                </configuration>
+<!--                <configuration>-->
+<!--                    <jreleaser>-->
+<!--                        <project>-->
+<!--                            <java>-->
+<!--                                <mainClass>${app.main.class}</mainClass>-->
+<!--                            </java>-->
+<!--                        </project>-->
+<!--                        <release>-->
+<!--                            <github>-->
+<!--                                <owner>johanjanssen</owner>-->
+<!--                                <overwrite>true</overwrite>-->
+<!--                                <repoUrl>https://github.com/johanjanssen/JavaHiddenGems</repoUrl>-->
+<!--                                <repoCloneUrl>https://github.com/johanjanssen/JavaHiddenGems.git</repoCloneUrl>-->
+<!--                            </github>-->
+<!--                        </release>-->
+<!--                        <distributions>-->
+<!--                            <app>-->
+<!--                                <artifacts>-->
+<!--                                    <artifact>-->
+<!--                                        <path>-->
+<!--                                            ${app.distribution.directory}/${project.artifactId}-${project.version}.zip-->
+<!--                                        </path>-->
+<!--                                    </artifact>-->
+<!--                                    <artifact>-->
+<!--                                        <path>-->
+<!--                                            ${app.distribution.directory}/${project.artifactId}-${project.version}.tar.gz-->
+<!--                                        </path>-->
+<!--                                    </artifact>-->
+<!--                                </artifacts>-->
+<!--                            </app>-->
+<!--                        </distributions>-->
+<!--                    </jreleaser>-->
+<!--                </configuration>-->
+            </plugin>
 
         </plugins>
     </build>

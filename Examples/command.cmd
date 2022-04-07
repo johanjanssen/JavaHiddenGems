@@ -75,3 +75,12 @@ jpackage --input target/ --name jpackageExample --main-jar jpackageExample.jar -
 #  {
 #      requires java.logging;
 #  }
+
+mvn test -Dmaven.test.skip
+mvnw test -Dmaven.test.skip
+mvnd test -Dmaven.test.skip
+
+jmc
+
+mvn jreleaser:assemble
+mvn jreleaser:changelog

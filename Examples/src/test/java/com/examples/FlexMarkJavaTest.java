@@ -50,12 +50,12 @@ public class FlexMarkJavaTest {
         Node document = parser.parse(markdown);
         visitor.visit(document);
         assertEquals(70, topicCount);
-        assertEquals(19, uniqueStartingCharactersSet.size());
+        assertEquals(20, uniqueStartingCharactersSet.size());
 
         //uniqueStartingCharactersSet.stream().forEach(System.out::print);
         String alphabetString = uniqueStartingCharactersSet.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining());
-        assertEquals("abcdefghjlmoprstuvw", alphabetString);
+        assertEquals("abcdefghijlmoprstuvw", alphabetString);
     }
 }
