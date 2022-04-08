@@ -9,9 +9,6 @@ https://www.archunit.org/
 ## AssertJ
 https://assertj.github.io/doc/
 
-## Asynchronous Logging
-https://aws.amazon.com/blogs/developer/asynchronous-logging-corretto-17/
-
 ## AutoService
 https://github.com/google/auto
 
@@ -205,22 +202,28 @@ https://sdkman.io/
 
 ## Spark
 https://spark.apache.org/
+https://github.com/apache/spark
 
 ## Testcontainers
 https://www.testcontainers.org/
+https://github.com/testcontainers/testcontainers-java
 
 ## Togglz
 https://www.togglz.org/
+https://github.com/togglz/togglz
 
-## Lightbend config
+## Lightbend/TypeSafe config and tsc-reload
 https://github.com/lightbend/config
+https://github.com/arkadius/tsc-reload
 
 ## Update4j
 https://github.com/update4j/update4j
 
 ## Vavr
 https://www.vavr.io/
+https://github.com/vavr-io/vavr
 
 ## Wiremock
 http://wiremock.org
+https://github.com/wiremock/wiremock
 

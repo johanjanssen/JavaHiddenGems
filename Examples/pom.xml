@@ -391,6 +391,62 @@
             <version>1.0.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.jknack</groupId>
+            <artifactId>handlebars</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+
+        <!-- TypeSafe config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+        <!-- Optional extra dependency for TypeSafe config to hot reload configuration without restarting the application -->
+        <dependency>
+            <groupId>pl.touk</groupId>
+            <artifactId>tsc-reload</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <!-- End TypeSafe config -->
+
+        <!-- Togglz -->
+        <!-- Togglz for Servlet environments (mandatory), there is an alternative non Spring Boot dependency-->
+        <dependency>
+            <groupId>org.togglz</groupId>
+            <artifactId>togglz-spring-boot-starter</artifactId>
+            <version>2.6.1.Final</version>
+        </dependency>
+
+        <!-- Togglz Admin Console -->
+        <dependency>
+            <groupId>org.togglz</groupId>
+            <artifactId>togglz-console</artifactId>
+            <version>2.6.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- End Togglz -->
+
+        <!-- ShedLock -->
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-spring</artifactId>
+            <version>4.33.0</version>
+        </dependency>
+        <!-- More for testing, normally use a better storage solution -->
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-provider-inmemory</artifactId>
+            <version>4.33.0</version>
+        </dependency>
+        <!-- End ShedLock -->
+
         <!-- graphql -->
         <dependency>
             <groupId>com.graphql-java</groupId>
@@ -754,5 +810,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>

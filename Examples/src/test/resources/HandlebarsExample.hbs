@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    {{#with person ~}}
+    Hello {{firstName}} {{lastName}} would you be interested in this vacancy?
+    {{/with ~}}
+
+    <h1>{{functionTitle ~}}</h1>
+    Expected knowledge:
+    <ul>
+        {{#each expertiseList ~}}
+        <li>{{technology}} (years of experience {{years}})</li>
+        {{/each ~}}
+    </ul>
+    To provide a good work life balance you only work {{workinghours}} hours per week
+    We care about your wellbeing so you get an awesome {{wrong_name}} days off per year.
+
+    Expected salary: an awesome above market salary of at least {{salary}} euro
+</body>
+</html>
