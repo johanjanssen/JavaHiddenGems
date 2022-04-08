@@ -1,0 +1,13 @@
+name: Run Renovate
+on: workflow_dispatch
+jobs:
+  Run-Renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v32.14.1
+        with:
+          configurationFile: example/renovate-config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
