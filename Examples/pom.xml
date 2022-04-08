@@ -451,7 +451,7 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java</artifactId>
-            <version>3.0.0</version>
+            <version>230521-nf-execution</version>
         </dependency>
         <dependency>
             <groupId>com.graphql-java</groupId>
