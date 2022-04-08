@@ -461,7 +461,7 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java-servlet</artifactId>
-            <version>4.0.0</version>
+            <version>4.7.0</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
