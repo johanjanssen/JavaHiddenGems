@@ -372,8 +372,24 @@
             <artifactId>jooq-codegen</artifactId>
             <version>3.16.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- End jOOQ -->
 
+        <!-- Also see compiler-plugin annotationprocessor -->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service-annotations</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
         <!-- graphql -->
         <dependency>
@@ -427,6 +443,11 @@
                             <groupId>com.google.auto.value</groupId>
                             <artifactId>auto-value</artifactId>
                             <version>1.9</version>
+                        </path>
+                        <path>
+                            <groupId>com.google.auto.service</groupId>
+                            <artifactId>auto-service</artifactId>
+                            <version>1.0.1</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
@@ -596,6 +617,7 @@
             </plugin>
 
             <!-- mvn jreleaser:config -->
+            <!-- mvn jreleaser:changelog -->
             <!-- mvn jreleaser:full-release -Djreleaser.dryrun=true -->
             <!-- Configure JRELEASER_GITHUB_TOKEN environment variable with GitHub personal token -->
             <plugin>
@@ -607,7 +629,7 @@
                     <jreleaser>
                         <release>
                             <github>
-                                <changelog>
+                                <changelog><!-- Make sure at least one tag is present -->
                                     <enabled>true</enabled>
                                     <formatted>ALWAYS</formatted>
                                     <preset>gitmoji</preset>
@@ -617,41 +639,108 @@
                         </release>
                     </jreleaser>
                 </configuration>
-<!--                <configuration>-->
-<!--                    <jreleaser>-->
-<!--                        <project>-->
-<!--                            <java>-->
-<!--                                <mainClass>${app.main.class}</mainClass>-->
-<!--                            </java>-->
-<!--                        </project>-->
-<!--                        <release>-->
-<!--                            <github>-->
-<!--                                <owner>johanjanssen</owner>-->
-<!--                                <overwrite>true</overwrite>-->
-<!--                                <repoUrl>https://github.com/johanjanssen/JavaHiddenGems</repoUrl>-->
-<!--                                <repoCloneUrl>https://github.com/johanjanssen/JavaHiddenGems.git</repoCloneUrl>-->
-<!--                            </github>-->
-<!--                        </release>-->
-<!--                        <distributions>-->
-<!--                            <app>-->
-<!--                                <artifacts>-->
-<!--                                    <artifact>-->
-<!--                                        <path>-->
-<!--                                            ${app.distribution.directory}/${project.artifactId}-${project.version}.zip-->
-<!--                                        </path>-->
-<!--                                    </artifact>-->
-<!--                                    <artifact>-->
-<!--                                        <path>-->
-<!--                                            ${app.distribution.directory}/${project.artifactId}-${project.version}.tar.gz-->
-<!--                                        </path>-->
-<!--                                    </artifact>-->
-<!--                                </artifacts>-->
-<!--                            </app>-->
-<!--                        </distributions>-->
-<!--                    </jreleaser>-->
-<!--                </configuration>-->
             </plugin>
 
+
+            <!-- jOOQ -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sql-maven-plugin</artifactId><!-- Old and no updates for years-->
+                <version>1.5</version>
+
+                <!-- Skip DB creation if the value of the skip.db.creation property is true -->
+                <!--                <configuration>-->
+                <!--                    <skip>${skip.db.creation}</skip>-->
+                <!--                </configuration>-->
+
+                <executions>
+                    <!-- Execute SQL statements to the configured database -->
+                    <execution>
+                        <id>create-database-h2</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <driver>org.h2.Driver</driver>
+                            <url>jdbc:h2:~/jooq</url>
+                            <!--                            <username>${db.username}</username>-->
+                            <!--                            <password>${db.password}</password>-->
+
+                            <!-- Ensure that our changes are committed automatically -->
+                            <autocommit>true</autocommit>
+                            <!-- Configure the location of the invoked SQL script -->
+                            <srcFiles>
+                                <srcFile>src/main/resources/schema.sql</srcFile>
+                            </srcFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <!--
+                        Because we use the H2 database, we have to add it as the dependency
+                        of this plugin.
+                    -->
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>${h2.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <!-- Specify the maven code generator plugin -->
+                <!-- Use org.jooq                for the Open Source Edition
+                         org.jooq.pro            for commercial editions with Java 17 support,
+                         org.jooq.pro-java-11    for commercial editions with Java 11 support,
+                         org.jooq.pro-java-8     for commercial editions with Java 8 support,
+                         org.jooq.trial          for the free trial edition with Java 17 support,
+                         org.jooq.trial-java-11  for the free trial edition with Java 11 support,
+                         org.jooq.trial-java-8   for the free trial edition with Java 8 support
+
+                     Note: Only the Open Source Edition is hosted on Maven Central.
+                           Import the others manually from your distribution -->
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.16.5</version>
+
+                <executions>
+                    <execution>
+                        <id>jooq-codegen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>${h2.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <jdbc>
+                        <driver>org.h2.Driver</driver>
+                        <url>jdbc:h2:~/jooq</url>
+                    </jdbc>
+                    <generator>
+                        <name>org.jooq.codegen.DefaultGenerator</name>
+                        <database>
+                            <name>org.jooq.meta.h2.H2Database</name>
+                            <includes>.*</includes>
+                            <excludes/>
+                            <inputSchema>PUBLIC</inputSchema>
+                        </database>
+                        <target>
+                            <packageName>com.examples.jooq.generated</packageName>
+                            <directory>src/main/java/</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencyManagement>

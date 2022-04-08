@@ -13,10 +13,10 @@ https://assertj.github.io/doc/
 https://aws.amazon.com/blogs/developer/asynchronous-logging-corretto-17/
 
 ## AutoService
-https://github.com/google/auto/tree/master/service
+https://github.com/google/auto
 
 ## AutoValue
-https://github.com/google/auto/tree/master/value
+https://github.com/google/auto
 
 ## Awaitility
 https://github.com/awaitility/awaitility
@@ -28,7 +28,7 @@ https://buildpacks.io/
 https://github.com/classgraph/classgraph
 
 ## DominoKit
-https://github.com/DominoKit
+https://github.com/DominoKit/domino-ui
 
 ## Eclipse Deeplearning4j
 https://projects.eclipse.org/proposals/eclipse-deeplearning4j
@@ -96,6 +96,7 @@ https://www.jobrunr.io/en/
 
 ## Jolo
 https://github.com/PicnicSupermarket/jolo
+0.2 no commit since 2020
 
 ## jOOQ
 https://www.jooq.org/
