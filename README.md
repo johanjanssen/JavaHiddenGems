@@ -87,6 +87,7 @@ https://access.redhat.com/documentation/en-us/openjdk/11/html/using_jlink_to_cus
 
 ## jMolecules
 https://github.com/xmolecules/jmolecules
+Explicitly use DDD concepts with annotations or interfaces instead of naming classes ...Entity. ByteBuddy is used to map the annotations to Spring Data annotations during the build.
 
 ## JobRunr
 https://www.jobrunr.io/en/

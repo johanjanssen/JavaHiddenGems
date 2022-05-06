@@ -471,6 +471,33 @@
         </dependency>
         <!-- End graphql -->
 
+        <!-- jMolecules: also see plugin -->
+        <dependency>
+            <groupId>org.jmolecules</groupId>
+            <artifactId>jmolecules-ddd</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jmolecules.integrations</groupId>
+            <artifactId>jmolecules-spring-data-jpa</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency> <!-- Also see compiler-plugin -->
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- End jMolecules -->
 
     </dependencies>
 
@@ -490,6 +517,11 @@
                 <configuration>
                     <release>${java.version}</release>
                     <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.24</version>
+                        </path>
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
@@ -796,6 +828,25 @@
                         </target>
                     </generator>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy-maven-plugin</artifactId>
+                <version>1.12.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>transform</goal> <!-- Enable the source code transformation -->
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency> <!-- Apply jMolecules transformations -->
+                        <groupId>org.jmolecules.integrations</groupId>
+                        <artifactId>jmolecules-bytebuddy</artifactId>
+                        <version>0.9.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

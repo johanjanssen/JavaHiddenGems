@@ -172,3 +172,5 @@ jpackagecustumjre/
 *.xlsx
 microstream-store/
 storage/
+
+**/jooq/generated
