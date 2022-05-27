@@ -360,7 +360,7 @@
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq</artifactId>
-            <version>3.16.5</version>
+            <version>3.16.6</version>
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
