@@ -534,7 +534,7 @@
             <dependency>
                 <groupId>org.jobrunr</groupId>
                 <artifactId>jobrunr-spring-boot-starter</artifactId>
-                <version>5.0.0</version>
+                <version>5.1.2</version>
             </dependency>
 
             <!-- jOOQ -->
