@@ -1,6 +1,6 @@
-mcs search verifier
+mcs search equalsverifier
 mcs class-search EqualsVerifier
-mcs search nl.jqno.equalsverifier:equalsverifier:1.4.1
+mcs search nl.jqno.equalsverifier:equalsverifier:3.10
 
 jshell --class-path .
 # Use tab completion
@@ -85,12 +85,3 @@ jmc
 mvn jreleaser:assemble
 mvn jreleaser:changelog
 
-# Extract jacocoagent.jar and jacococli.jar from the latest zip release build on https://www.eclemma.org/jacoco/
-mvn package
-java -jar Examples-0.0.1-SNAPSHOT.jar
-# http://localhost:8080/car
-  -javaagent:[yourpath/]jacocoagent.jar=[option1]=[value1],[option2]=[value2]
-
-java -javaagent:org.jacoco.agent-0.8.8.jar=destfile=$resultpath$\jacoco.exec,append=false,includes=com.examples.*  -jar target\Examples-0.0.1-SNAPSHOT.jar
-java -javaagent:jacocoagent.jar=destfile=target\jacoco.exec,append=false,includes=com.examples.shared.*  -jar target\Examples-0.0.1-SNAPSHOT.jar
-java -jar jacococli.jar report target\jacoco.exec --classfiles target\classes\com\examples\shared\ --sourcefiles src\main\java\ --html target\

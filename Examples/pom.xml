@@ -2,6 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>jooq</module>
+        <module>graphql</module>
+        <module>optaplanner</module>
+        <module>jobrunr</module>
+        <module>handlebars</module>
+        <module>spark</module>
+        <module>microstream</module>
+        <module>jmolecules</module>
+        <module>pitest</module>
+        <module>javapoet</module>
+        <module>archunit</module>
+        <module>others</module>
+        <module>owasp-dependency-check</module>
+        <module>maven-enforcer-plugin</module>
+        <module>old-groupids-alerter</module>
+        <module>jacoco-agent</module>
+    </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,6 +45,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <version.org.optaplanner>8.22.0.Final</version.org.optaplanner>
     </properties>
     <dependencies>
         <dependency>
@@ -38,39 +59,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Spark -->
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
-            <version>3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_2.12</artifactId>
-            <version>3.2.1</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>janino</artifactId>
-                    <groupId>org.codehaus.janino</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-compiler</artifactId>
-                    <groupId>org.codehaus.janino</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.janino</groupId>
-            <artifactId>janino</artifactId>
-            <version>3.1.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.janino</groupId>
-            <artifactId>commons-compiler</artifactId>
-            <version>3.1.6</version>
-        </dependency>
-        <!-- End Spark -->
-
         <dependency>
             <groupId>com.vladsch.flexmark</groupId>
             <artifactId>flexmark-all</artifactId>
@@ -83,39 +71,11 @@
             <version>1.14.3</version>
         </dependency>
 
-        <!-- Added as an example of a vulnerable dependency -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.2</version>
-        </dependency>
-
-        <!-- Added as an duplicate example of a vulnerable dependency for the enforcer plugin -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.7</version>
-        </dependency>
-
-        <!-- Example for Old GroupIds Alerter -->
-        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
-        </dependency>
-
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.22.0</version>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.squareup</groupId>
-            <artifactId>javapoet</artifactId>
-            <version>1.13.0</version>
         </dependency>
 
         <dependency>
@@ -145,13 +105,6 @@
             <groupId>com.googlecode.libphonenumber</groupId>
             <artifactId>carrier</artifactId>
             <version>1.172</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tngtech.archunit</groupId>
-            <artifactId>archunit</artifactId>
-            <version>0.23.1</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- jdbi -->
@@ -293,14 +246,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Also see application.properties -->
-        <dependency>
-            <groupId>org.jobrunr</groupId>
-            <artifactId>jobrunr-spring-boot-starter</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-
-
         <!-- Testcontainers, also see BOM in dependencyManagement -->
         <dependency>
             <groupId>org.testcontainers</groupId>
@@ -331,19 +276,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- MicroStream -->
-        <dependency>
-            <groupId>one.microstream</groupId>
-            <artifactId>microstream-storage-embedded</artifactId>
-            <version>06.01.00-MS-GA</version>
-        </dependency>
-        <dependency>
-            <groupId>one.microstream</groupId>
-            <artifactId>microstream-storage-embedded-configuration</artifactId>
-            <version>06.01.00-MS-GA</version>
-        </dependency>
-        <!-- End MicroStream -->
-
         <!-- Shows Micrometer -->
         <!-- See application.properties -->
         <dependency>
@@ -356,45 +288,11 @@
         </dependency>
         <!-- End Micrometer -->
 
-        <!-- jOOQ -->
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq</artifactId>
-            <version>3.16.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-meta</artifactId>
-            <version>3.16.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen</artifactId>
-            <version>3.16.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jooq</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jooq</groupId>
-                    <artifactId>jooq</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- End jOOQ -->
-
         <!-- Also see compiler-plugin annotationprocessor -->
         <dependency>
             <groupId>com.google.auto.service</groupId>
             <artifactId>auto-service-annotations</artifactId>
             <version>1.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.jknack</groupId>
-            <artifactId>handlebars</artifactId>
-            <version>4.3.0</version>
         </dependency>
 
         <!-- TypeSafe config -->
@@ -470,35 +368,6 @@
             <scope>provided</scope>
         </dependency>
         <!-- End graphql -->
-
-        <!-- jMolecules: also see plugin -->
-        <dependency>
-            <groupId>org.jmolecules</groupId>
-            <artifactId>jmolecules-ddd</artifactId>
-            <version>1.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jmolecules.integrations</groupId>
-            <artifactId>jmolecules-spring-data-jpa</artifactId>
-            <version>0.3.0</version>
-        </dependency>
-        <dependency> <!-- Also see compiler-plugin -->
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- End jMolecules -->
-
     </dependencies>
 
     <build>
@@ -553,109 +422,10 @@
                 </configuration>
             </plugin>
 
-            <!-- mvn verify -->
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>7.0.4</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.2.2</version>
-            </plugin>
-
-            <!-- mvn validate -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>enforce-versions</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireMavenVersion>
-                                    <version>3.8.5</version>
-                                </requireMavenVersion>
-                                <requireJavaVersion>
-                                    <version>17</version>
-                                </requireJavaVersion>
-                                <requireOS>
-                                    <family>windows</family>
-                                </requireOS>
-                                <!-- Not allowed to define the same dependency with two different versions inside this POM -->
-                                <banDuplicatePomDependencyVersions/>
-                                <!-- Not allowed to have the same (transitive) dependency with two different versions -->
-                                <dependencyConvergence/>
-                                <!-- Not allowed to used snapshot dependencies -->
-                                <requireReleaseDeps/>
-                                <!-- Not allowed to use these specific dependencies -->
-                                <bannedDependencies>
-                                    <!-- These are not allowed-->
-                                    <excludes>
-                                        <exclude>javax.*</exclude>
-                                        <exclude>org.apache.logging.log4j:log4j-core:*</exclude>
-                                    </excludes>
-                                    <!-- These are allowed -->
-                                    <includes>
-                                        <!--2.16.0 and higher of log4j are allowed -->
-                                        <include>org.apache.logging.log4j:log4j-core:2.16.0</include>
-                                    </includes>
-                                </bannedDependencies>
-                            </rules>
-                            <!-- For testing purposes, makes sure the build doesn't stop when enforced rules are broken -->
-                            <fail>false</fail>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- mvn biz.lermitage.oga:oga-maven-plugin:check -->
-            <!-- First start the FileServer in com.examples.old.groupids.alerter as the normal host gives some security issues-->
-            <plugin>
-                <groupId>biz.lermitage.oga</groupId>
-                <artifactId>oga-maven-plugin</artifactId>
-                <version>1.7.0</version>
-                <configuration>
-                    <ogDefinitionsUrl>http://localhost:8080/old-groupids-alerter/og-definitions.json</ogDefinitionsUrl>
-                </configuration>
-            </plugin>
-
-            <!-- mvn -DwithHistory test-compile org.pitest:pitest-maven:mutationCoverage -->
-            <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
-                <version>1.7.5</version>
-                <configuration>
-                    <targetClasses>
-                        <param>com.examples.*</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>com.examples.*</param>
-                    </targetTests>
-                    <excludedTestClasses>
-                        <excludedTestClass>com.examples**.*IT</excludedTestClass>
-                    </excludedTestClasses>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.15</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!-- Make sure to specify the java.version property in the pom.xml -->
@@ -686,23 +456,23 @@
 
             <!-- See jqassistant\my-rules.adoc -->
             <!-- It doesn't work out of the box due to the Neo4j version used to remain compatible https://jqassistant.github.io/jqassistant/doc/1.11.1/manual/#_maven-->
-            <plugin>
-                <groupId>com.buschmais.jqassistant</groupId>
-                <artifactId>jqassistant-maven-plugin</artifactId>
-                <version>1.12.0-M1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>scan</goal>
-                            <goal>analyze</goal>
-                        </goals>
-                        <configuration>
-                            <warnOnSeverity>MINOR</warnOnSeverity>
-                            <failOnSeverity>MAJOR</failOnSeverity>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.buschmais.jqassistant</groupId>-->
+<!--                <artifactId>jqassistant-maven-plugin</artifactId>-->
+<!--                <version>1.12.0-M1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>scan</goal>-->
+<!--                            <goal>analyze</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <warnOnSeverity>MINOR</warnOnSeverity>-->
+<!--                            <failOnSeverity>MAJOR</failOnSeverity>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
             <!-- mvn jreleaser:config -->
             <!-- mvn jreleaser:changelog -->
@@ -728,126 +498,6 @@
                     </jreleaser>
                 </configuration>
             </plugin>
-
-
-            <!-- jOOQ -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>sql-maven-plugin</artifactId><!-- Old and no updates for years-->
-                <version>1.5</version>
-
-                <!-- Skip DB creation if the value of the skip.db.creation property is true -->
-                <!--                <configuration>-->
-                <!--                    <skip>${skip.db.creation}</skip>-->
-                <!--                </configuration>-->
-
-                <executions>
-                    <!-- Execute SQL statements to the configured database -->
-                    <execution>
-                        <id>create-database-h2</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>execute</goal>
-                        </goals>
-                        <configuration>
-                            <driver>org.h2.Driver</driver>
-                            <url>jdbc:h2:~/jooq</url>
-                            <!--                            <username>${db.username}</username>-->
-                            <!--                            <password>${db.password}</password>-->
-
-                            <!-- Ensure that our changes are committed automatically -->
-                            <autocommit>true</autocommit>
-                            <!-- Configure the location of the invoked SQL script -->
-                            <srcFiles>
-                                <srcFile>src/main/resources/schema.sql</srcFile>
-                            </srcFiles>
-                        </configuration>
-                    </execution>
-                </executions>
-
-                <dependencies>
-                    <!--
-                        Because we use the H2 database, we have to add it as the dependency
-                        of this plugin.
-                    -->
-                    <dependency>
-                        <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <!-- Specify the maven code generator plugin -->
-                <!-- Use org.jooq                for the Open Source Edition
-                         org.jooq.pro            for commercial editions with Java 17 support,
-                         org.jooq.pro-java-11    for commercial editions with Java 11 support,
-                         org.jooq.pro-java-8     for commercial editions with Java 8 support,
-                         org.jooq.trial          for the free trial edition with Java 17 support,
-                         org.jooq.trial-java-11  for the free trial edition with Java 11 support,
-                         org.jooq.trial-java-8   for the free trial edition with Java 8 support
-
-                     Note: Only the Open Source Edition is hosted on Maven Central.
-                           Import the others manually from your distribution -->
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.16.5</version>
-
-                <executions>
-                    <execution>
-                        <id>jooq-codegen</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <jdbc>
-                        <driver>org.h2.Driver</driver>
-                        <url>jdbc:h2:~/jooq</url>
-                    </jdbc>
-                    <generator>
-                        <name>org.jooq.codegen.DefaultGenerator</name>
-                        <database>
-                            <name>org.jooq.meta.h2.H2Database</name>
-                            <includes>.*</includes>
-                            <excludes/>
-                            <inputSchema>PUBLIC</inputSchema>
-                        </database>
-                        <target>
-                            <packageName>com.examples.jooq.generated</packageName>
-                            <directory>src/main/java/</directory>
-                        </target>
-                    </generator>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.bytebuddy</groupId>
-                <artifactId>byte-buddy-maven-plugin</artifactId>
-                <version>1.12.10</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>transform</goal> <!-- Enable the source code transformation -->
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency> <!-- Apply jMolecules transformations -->
-                        <groupId>org.jmolecules.integrations</groupId>
-                        <artifactId>jmolecules-bytebuddy</artifactId>
-                        <version>0.9.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
         </plugins>
     </build>
     <dependencyManagement>
@@ -858,6 +508,176 @@
                 <version>1.16.3</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.optaplanner</groupId>
+                <artifactId>optaplanner-bom</artifactId>
+                <version>${version.org.optaplanner}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.tngtech.archunit</groupId>
+                <artifactId>archunit</artifactId>
+                <version>0.23.1</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.jknack</groupId>
+                <artifactId>handlebars</artifactId>
+                <version>4.3.0</version>
+            </dependency>
+
+            <!-- Also see application.properties -->
+            <dependency>
+                <groupId>org.jobrunr</groupId>
+                <artifactId>jobrunr-spring-boot-starter</artifactId>
+                <version>5.0.0</version>
+            </dependency>
+
+            <!-- jOOQ -->
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq</artifactId>
+                <version>3.16.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-meta</artifactId>
+                <version>3.16.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen</artifactId>
+                <version>3.16.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jooq</artifactId>
+                <version>2.6.7</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.jooq</groupId>
+                        <artifactId>jooq</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- End jOOQ -->
+
+            <!-- GraphQL -->
+            <dependency>
+                <groupId>com.graphql-java</groupId>
+                <artifactId>graphql-java</artifactId>
+                <version>11.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.graphql-java</groupId>
+                <artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>26.0-jre</version>
+            </dependency>
+            <!-- End GraphQL -->
+
+            <dependency>
+                <groupId>com.squareup</groupId>
+                <artifactId>javapoet</artifactId>
+                <version>1.13.0</version>
+            </dependency>
+
+            <!-- jMolecules: also see plugin -->
+            <dependency>
+                <groupId>org.jmolecules</groupId>
+                <artifactId>jmolecules-ddd</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.200</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>2.6.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jmolecules.integrations</groupId>
+                <artifactId>jmolecules-spring-data-jpa</artifactId>
+                <version>0.3.0</version>
+            </dependency>
+            <dependency> <!-- Also see compiler-plugin -->
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- End jMolecules -->
+
+            <!-- MicroStream -->
+            <dependency>
+                <groupId>one.microstream</groupId>
+                <artifactId>microstream-storage-embedded</artifactId>
+                <version>06.01.00-MS-GA</version>
+            </dependency>
+            <dependency>
+                <groupId>one.microstream</groupId>
+                <artifactId>microstream-storage-embedded-configuration</artifactId>
+                <version>06.01.00-MS-GA</version>
+            </dependency>
+            <!-- End MicroStream -->
+
+            <!-- OptaPlanner -->
+            <dependency>
+                <groupId>org.optaplanner</groupId>
+                <artifactId>optaplanner-spring-boot-starter</artifactId>
+                <version>8.22.0.Final</version>
+            </dependency>
+            <!-- End OptaPlanner -->
+
+            <!-- Spark -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.12</artifactId>
+                <version>3.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.12</artifactId>
+                <version>3.2.1</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>janino</artifactId>
+                        <groupId>org.codehaus.janino</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>commons-compiler</artifactId>
+                        <groupId>org.codehaus.janino</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>3.0.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>commons-compiler</artifactId>
+                <version>3.0.8</version>
+            </dependency>
+            <!-- End Spark -->
+
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

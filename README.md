@@ -1,6 +1,7 @@
 # JavaHiddenGems
+Make sure to start the Docker-webserver-cache container before running the OWASP dependency check or the Old GroupIds Alerter.
 
-# Apache POI
+## Apache POI
 https://poi.apache.org/
 
 ## ArchUnit
