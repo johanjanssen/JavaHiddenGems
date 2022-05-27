@@ -94,7 +94,7 @@
         <dependency>
             <groupId>com.googlecode.libphonenumber</groupId>
             <artifactId>libphonenumber</artifactId>
-            <version>8.12.46</version>
+            <version>8.12.49</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.libphonenumber</groupId>
