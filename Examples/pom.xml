@@ -556,7 +556,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-jooq</artifactId>
-                <version>2.7.0</version>
+                <version>2.6.7</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.jooq</groupId>
