@@ -104,7 +104,7 @@
         <dependency>
             <groupId>com.googlecode.libphonenumber</groupId>
             <artifactId>carrier</artifactId>
-            <version>1.172</version>
+            <version>1.175</version>
         </dependency>
 
         <!-- jdbi -->
