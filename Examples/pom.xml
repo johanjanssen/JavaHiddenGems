@@ -648,7 +648,7 @@
             <dependency>
                 <groupId>org.optaplanner</groupId>
                 <artifactId>optaplanner-spring-boot-starter</artifactId>
-                <version>8.22.0.Final</version>
+                <version>8.22.1.Final</version>
             </dependency>
             <!-- End OptaPlanner -->
 
