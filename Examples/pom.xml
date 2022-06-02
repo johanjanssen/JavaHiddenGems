@@ -586,7 +586,7 @@
             <dependency>
                 <groupId>com.graphql-java</groupId>
                 <artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
-                <version>1.0</version>
+                <version>2021-10-25T04-50-54-fbc162f</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
