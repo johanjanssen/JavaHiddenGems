@@ -1,4 +1,4 @@
-package com.examples;
+package com.example;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

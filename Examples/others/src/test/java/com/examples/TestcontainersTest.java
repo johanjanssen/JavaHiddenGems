@@ -20,7 +20,6 @@ public class TestcontainersTest {
     public void setUp() {
     }
 
-
     private static final String createBookTable = """
             CREATE TABLE BOOK
             (

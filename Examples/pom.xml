@@ -20,6 +20,8 @@
         <module>maven-enforcer-plugin</module>
         <module>old-groupids-alerter</module>
         <module>jacoco-agent</module>
+        <module>flexmark</module>
+        <module>gatling</module>
     </modules>
 
     <parent>
@@ -565,6 +567,15 @@
                 </exclusions>
             </dependency>
             <!-- End jOOQ -->
+
+            <!-- Gatling -->
+            <dependency>
+                <groupId>io.gatling.highcharts</groupId>
+                <artifactId>gatling-charts-highcharts</artifactId>
+                <version>3.7.6</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- End Gatling -->
 
             <!-- GraphQL -->
             <dependency>

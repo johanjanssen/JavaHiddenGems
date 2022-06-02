@@ -1,4 +1,4 @@
-package com.examples;
+package com.example;
 
 import com.vladsch.flexmark.ast.Text;
 import com.vladsch.flexmark.parser.Parser;
@@ -59,13 +59,13 @@ public class FlexMarkJavaTest {
         Parser parser = Parser.builder(options).build();
         Node document = parser.parse(markdown);
         visitor.visit(document);
-        assertEquals(70, topicCount);
-        assertEquals(20, uniqueStartingCharactersSet.size());
+        assertEquals(68, topicCount);
+        assertEquals(19, uniqueStartingCharactersSet.size());
 
         String alphabetString = uniqueStartingCharactersSet.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining());
-        assertEquals("abcdefghijlmoprstuvw", alphabetString);
+        assertEquals("abcefghijlmoprstuvw", alphabetString);
 
         testGitHubLinks();
     }

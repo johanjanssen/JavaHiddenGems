@@ -64,7 +64,7 @@
                         </goals>
                         <configuration>
                             <driver>org.h2.Driver</driver>
-                            <url>jdbc:h2:~/jooq</url>
+                            <url>jdbc:h2:~/jooqdb</url>
                             <!--                            <username>${db.username}</username>-->
                             <!--                            <password>${db.password}</password>-->
 
@@ -86,7 +86,7 @@
                     <dependency>
                         <groupId>com.h2database</groupId>
                         <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
+                        <version>1.4.200</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -119,13 +119,13 @@
                     <dependency>
                         <groupId>com.h2database</groupId>
                         <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
+                        <version>1.4.200</version>
                     </dependency>
                 </dependencies>
                 <configuration>
                     <jdbc>
                         <driver>org.h2.Driver</driver>
-                        <url>jdbc:h2:~/jooq</url>
+                        <url>jdbc:h2:~/jooqdb</url>
                     </jdbc>
                     <generator>
                         <name>org.jooq.codegen.DefaultGenerator</name>
