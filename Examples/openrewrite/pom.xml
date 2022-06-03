@@ -36,7 +36,6 @@
                     <activeRecipes>
                         <recipe>org.openrewrite.java.format.AutoFormat</recipe>
                         <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
-                        <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
                     </activeRecipes>
                 </configuration>
                 <dependencies>
@@ -44,6 +43,11 @@
                         <groupId>org.openrewrite.recipe</groupId>
                         <artifactId>rewrite-spring</artifactId>
                         <version>4.19.3</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-stdlib</artifactId>
+                        <version>1.6.21</version>
                     </dependency>
                 </dependencies>
             </plugin>
