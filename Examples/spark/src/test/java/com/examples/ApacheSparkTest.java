@@ -26,7 +26,7 @@ public class ApacheSparkTest {
         SparkSession spark = SparkSession.builder().appName("Amazon Dataset Example").master("local[*]").getOrCreate();
 
         assertEquals(29, Files.size(Path.of(amazonDatasetFile)) / 1024 / 1024 / 1024 );
-        System.out.println("Dataset contains 41.135.700 records");
+        System.out.println("29GB Dataset contains 41.135.700 records");
 
         Encoder<Review> reviewEncoder = Encoders.bean(Review.class);
 
@@ -37,7 +37,7 @@ public class ApacheSparkTest {
 
         assertEquals(28, filteredSet.count());
 
-        filteredSet.show(30, false);
+        filteredSet.show((int) filteredSet.count(), false);
 
         Instant finish = Instant.now();
         Duration duration = Duration.between(start, finish);

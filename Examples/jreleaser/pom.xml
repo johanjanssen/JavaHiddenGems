@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Examples</artifactId>
+        <groupId>com.example</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jreleaser</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- mvn jreleaser:config -->
+            <!-- mvn jreleaser:changelog -->
+            <!-- mvn jreleaser:full-release -Djreleaser.dryrun=true -->
+            <!-- Configure JRELEASER_GITHUB_TOKEN environment variable with GitHub personal token -->
+            <plugin>
+                <groupId>org.jreleaser</groupId>
+                <artifactId>jreleaser-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <gitRootSearch>true</gitRootSearch><!-- Needed as pom.xml is not in Git root directory -->
+                    <jreleaser>
+                        <release>
+                            <github>
+                                <changelog><!-- Make sure at least one tag is present -->
+                                    <enabled>true</enabled>
+                                    <formatted>ALWAYS</formatted>
+                                    <preset>gitmoji</preset>
+                                    <format>- {{commitShortHash}} {{commitTitle}}</format>
+                                </changelog>
+                            </github>
+                        </release>
+                    </jreleaser>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -8,7 +8,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Room {
-
     @PlanningId
     @Id @GeneratedValue
     private Long id;

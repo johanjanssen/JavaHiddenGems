@@ -25,13 +25,13 @@
                 <version>1.8.0</version>
                 <configuration>
                     <targetClasses>
-                        <param>com.examples.*</param>
+                        <param>com.example.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>com.examples.*</param>
+                        <param>com.example.*</param>
                     </targetTests>
                     <excludedTestClasses>
-                        <excludedTestClass>com.examples**.*IT</excludedTestClass>
+                        <excludedTestClass>com.example**.*IT</excludedTestClass>
                     </excludedTestClasses>
                 </configuration>
                 <dependencies>

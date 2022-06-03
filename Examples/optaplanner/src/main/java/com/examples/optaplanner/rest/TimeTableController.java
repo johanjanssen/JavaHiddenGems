@@ -25,11 +25,9 @@ public class TimeTableController {
 
     @GetMapping()
     public TimeTable getTimeTable() {
-        // Get the solver status before loading the solution
-        // to avoid the race condition that the solver terminates between them
         SolverStatus solverStatus = getSolverStatus();
         TimeTable solution = timeTableRepository.findById(TimeTableRepository.SINGLETON_TIME_TABLE_ID);
-        scoreManager.updateScore(solution); // Sets the score
+        scoreManager.updateScore(solution);
         solution.setSolverStatus(solverStatus);
         return solution;
     }

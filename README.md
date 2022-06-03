@@ -226,7 +226,7 @@ https://playwright.dev/
 No example yet
 
 ## Pitest or PIT Mutation Testing
-Test your unit tests by automatically changing them.
+Test your unit tests by automatically changing production code and rerunning the tests to see if they still pass.
 The [Pitest](https://pitest.org/)
 
 ## Renovate
@@ -236,6 +236,7 @@ https://docs.renovatebot.com/java/
 ## Resilience4j
 Fault tolerance library.
 https://github.com/resilience4j/resilience4j
+No example yet
 
 ## REST Assured
 Test and validate REST services.

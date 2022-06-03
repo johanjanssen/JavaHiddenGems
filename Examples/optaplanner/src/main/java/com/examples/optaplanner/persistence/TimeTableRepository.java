@@ -24,8 +24,6 @@ public class TimeTableRepository {
         if (!SINGLETON_TIME_TABLE_ID.equals(id)) {
             throw new IllegalStateException("There is no timeTable with id (" + id + ").");
         }
-        // Occurs in a single transaction, so each initialized lesson references the same timeslot/room instance
-        // that is contained by the timeTable's timeslotList/roomList.
         return new TimeTable(
                 timeslotRepository.findAll(),
                 roomRepository.findAll(),
@@ -34,7 +32,6 @@ public class TimeTableRepository {
 
     public void save(TimeTable timeTable) {
         for (Session session : timeTable.getLessonList()) {
-            // TODO this is awfully naive: optimistic locking causes issues if called by the SolverManager
             sessionRepository.save(session);
         }
     }

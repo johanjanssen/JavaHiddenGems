@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(classes = GraphQLApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GraphQLExampleTest {

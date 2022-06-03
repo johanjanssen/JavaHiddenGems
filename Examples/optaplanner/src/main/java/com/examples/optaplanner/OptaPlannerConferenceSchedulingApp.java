@@ -6,7 +6,6 @@ import com.examples.optaplanner.domain.Timeslot;
 import com.examples.optaplanner.persistence.RoomRepository;
 import com.examples.optaplanner.persistence.SessionRepository;
 import com.examples.optaplanner.persistence.TimeslotRepository;
-import graphql.GraphQL;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,13 +19,6 @@ public class OptaPlannerConferenceSchedulingApp {
 
     public static void main(String[] args) {
         SpringApplication.run(OptaPlannerConferenceSchedulingApp.class, args);
-    }
-
-    // temporary should be removed
-    private GraphQL graphQL;
-    @Bean
-    public GraphQL graphQL() {
-        return graphQL;
     }
 
     @Bean

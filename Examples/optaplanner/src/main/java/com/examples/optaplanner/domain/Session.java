@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 @PlanningEntity
 @Entity
 public class Session {
-
     @PlanningId
     @Id @GeneratedValue
     private Long id;

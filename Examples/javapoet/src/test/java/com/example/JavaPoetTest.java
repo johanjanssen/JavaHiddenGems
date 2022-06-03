@@ -78,20 +78,11 @@ public class JavaPoetTest {
 
         assertEquals(expectedClass, javaFile.toString());
 
-        javaFile.writeTo(System.out);
-
-        Path resourceDirectory = Paths.get("src","test","java");
-        String absolutePath = resourceDirectory.toFile().getAbsolutePath();
-
+        Path resourceDirectory = Paths.get("target", "javapoet");
         javaFile.writeTo(resourceDirectory);
-    }
 
-    @Test
-    void testStudent() throws IOException {
-        File file = new File("src/test/java/com/example/GeneratedStudent.java");
+        File file = new File("target/javapoet/com/example/GeneratedStudent.java");
         String content = Files.readString(file.toPath());
         assertEquals(expectedClass, content);
     }
-
-
 }

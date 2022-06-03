@@ -59,8 +59,6 @@ public class MicroStreamTest {
         carRepository.add(lamborghini);
         carRepository.add(pagani);
 
-        //final Consumer<Car> logAll = c -> LOG.info(c.toString());
-
         retrievedCarList = carRepository.findAll();
         assertEquals(3, retrievedCarList.size());
         String lamborghiniExpected = "Car{brand='Lamborghini', model='Diablo', carPartList=[CarPart{name='mirror', price=232.25}]}";

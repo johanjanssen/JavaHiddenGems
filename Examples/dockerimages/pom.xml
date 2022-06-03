@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Examples</artifactId>
+        <groupId>com.example</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dockerimages</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Make sure to specify the java.version property in the pom.xml -->
+            <!-- mvn compile jib:build pushes to remote repo-->
+            <!-- mvn compile jib:dockerBuild doesn't push to remote repo -->
+            <!-- Run the resulting image with Docker: docker run -p 8080:8080 javahiddengems -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <to>
+                        <image>jibexample</image>
+                    </to>
+                    <container>
+                        <mainClass>com.examples.shared.CarApplication</mainClass>
+                    </container>
+                </configuration>
+            </plugin>
+
+            <!-- Make sure to specify the java.version property in the pom.xml -->
+            <!-- Buildpack, no pom change needed: mvn spring-boot:build-image -Dmaven.test.skip -Dspring-boot.build-image.imageName=buildpackexample-->
+            <!-- Run the resulting image with Docker: docker run -p 8080:8080 buildpackjavahiddengems -->
+
+
+            <!-- jibexample ... 342MB -->
+            <!-- buildpackexample ... 344MB -->
+        </plugins>
+    </build>
+</project>

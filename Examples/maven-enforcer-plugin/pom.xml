@@ -65,13 +65,13 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.8.5</version>
+                                    <version>3.8.6</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>17</version>
+                                    <version>18</version>
                                 </requireJavaVersion>
                                 <requireOS>
-                                    <family>windows</family>
+                                    <family>unix</family>
                                 </requireOS>
                                 <!-- Not allowed to define the same dependency with two different versions inside this POM -->
                                 <banDuplicatePomDependencyVersions/>
