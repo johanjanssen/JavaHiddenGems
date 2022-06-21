@@ -66,6 +66,7 @@ https://github.com/jknack/handlebars.java
 ## iText
 PDF library
 https://itextpdf.com/en
+Be aware of the quite limiting license: https://fossa.com/blog/open-source-software-licenses-101-agpl-license/
 
 ## Jacoco
 Code coverage library.
