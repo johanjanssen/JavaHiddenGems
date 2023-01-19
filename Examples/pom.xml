@@ -469,7 +469,7 @@
             <dependency>
                 <groupId>one.microstream</groupId>
                 <artifactId>microstream-storage-embedded-configuration</artifactId>
-                <version>06.01.00-MS-GA</version>
+                <version>08.00.00-MS-EA1</version>
             </dependency>
             <!-- End MicroStream -->
 
