@@ -47,7 +47,7 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-stdlib</artifactId>
-                        <version>1.6.21</version>
+                        <version>1.8.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
