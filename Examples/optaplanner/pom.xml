@@ -14,7 +14,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <version.org.optaplanner>8.21.0.Final</version.org.optaplanner>
+        <version.org.optaplanner>8.32.0.Final</version.org.optaplanner>
     </properties>
 
     <dependencies>
