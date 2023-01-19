@@ -35,7 +35,7 @@
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
                 <artifactId>oga-maven-plugin</artifactId>
-                <version>1.7.0</version>
+                <version>1.8.0</version>
                 <configuration>
                     <ogDefinitionsUrl>http://localhost:80/og-definitions.json</ogDefinitionsUrl>
                 </configuration>
