@@ -9,5 +9,5 @@ RUN java -jar nist-data-mirror.jar mirror
 # Old GroupIds Alerter
 RUN wget https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json --no-check-certificate -O mirror/og-definitions.json
 
-FROM nginx:1.22.0-alpine
+FROM nginx:1.23.3-alpine
 COPY --from=java /OWASP/mirror /usr/share/nginx/html
