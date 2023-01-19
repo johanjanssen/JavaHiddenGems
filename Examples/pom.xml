@@ -247,7 +247,7 @@
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
-                            <version>1.4.2.Final</version>
+                            <version>1.5.3.Final</version>
                         </path>
                         <path>
                             <groupId>com.google.auto.value</groupId>
