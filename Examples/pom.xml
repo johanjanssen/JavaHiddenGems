@@ -531,7 +531,7 @@
             <dependency>
                 <groupId>org.togglz</groupId>
                 <artifactId>togglz-spring-boot-starter</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.3</version>
             </dependency>
 
             <!-- Togglz Admin Console -->
