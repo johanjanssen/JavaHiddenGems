@@ -104,7 +104,7 @@
                            Import the others manually from your distribution -->
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.16.5</version>
+                <version>3.17.7</version>
 
                 <executions>
                     <execution>
