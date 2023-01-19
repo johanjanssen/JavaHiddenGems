@@ -30,7 +30,7 @@ public class ArchUnitTest {
 
         String expectedMessage = """
             Architecture Violation [Priority: MEDIUM] - Rule 'classes that reside in a package '..controller..' and are annotated with @RestController should have simple name ending with 'Controller'' was violated (1 times):
-            simple name of com.example.payment.controller.WronglyNamed does not end with 'Controller' in (WronglyNamed.java:0)""";
+            Class <com.example.payment.controller.WronglyNamed> does not have simple name ending with 'Controller' in (WronglyNamed.java:0)""";
 
         assertEquals(expectedMessage, assertionError.getMessage().replaceAll("\\r\\n", "\n"));
     }
@@ -82,6 +82,7 @@ public class ArchUnitTest {
     @Test
     void controllerShouldOnlyUseService() {
         LayeredArchitecture arch = layeredArchitecture()
+                .consideringAllDependencies()
                 // Define layers
                 .layer("Controller").definedBy("..controller..")
                 .layer("Service").definedBy("..service..")
@@ -94,14 +95,14 @@ public class ArchUnitTest {
         });
 
         String expectedMessage = """
-            Architecture Violation [Priority: MEDIUM] - Rule 'Layered architecture consisting of
-            layer 'Controller' ('..controller..')
-            layer 'Service' ('..service..')
-            where layer 'Controller' may not be accessed by any layer
-            where layer 'Service' may only be accessed by layers ['Controller']' was violated (3 times):
-            Constructor <com.example.reservation.service.ReservationService.<init>(com.example.reservation.controller.ReservationController)> has parameter of type <com.example.reservation.controller.ReservationController> in (ReservationService.java:0)
-            Field <com.example.reservation.service.ReservationService.reservationController> has type <com.example.reservation.controller.ReservationController> in (ReservationService.java:0)
-            Method <com.example.reservation.service.ReservationService.reservationServiceFunction()> calls method <com.example.reservation.controller.ReservationController.reservationControllerFunction()> in (ReservationService.java:16)""";
+                Architecture Violation [Priority: MEDIUM] - Rule 'Layered architecture considering all dependencies, consisting of
+                layer 'Controller' ('..controller..')
+                layer 'Service' ('..service..')
+                where layer 'Controller' may not be accessed by any layer
+                where layer 'Service' may only be accessed by layers ['Controller']' was violated (3 times):
+                Constructor <com.example.reservation.service.ReservationService.<init>(com.example.reservation.controller.ReservationController)> has parameter of type <com.example.reservation.controller.ReservationController> in (ReservationService.java:0)
+                Field <com.example.reservation.service.ReservationService.reservationController> has type <com.example.reservation.controller.ReservationController> in (ReservationService.java:0)
+                Method <com.example.reservation.service.ReservationService.reservationServiceFunction()> calls method <com.example.reservation.controller.ReservationController.reservationControllerFunction()> in (ReservationService.java:16)""";
 
         assertEquals(expectedMessage, assertionError.getMessage().replaceAll("\\r\\n", "\n"));
     }

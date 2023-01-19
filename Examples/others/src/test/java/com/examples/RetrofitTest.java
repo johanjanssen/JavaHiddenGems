@@ -5,7 +5,7 @@ import com.examples.shared.CarApplication;
 import com.examples.shared.CarPart;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.annotation.DirtiesContext;
 import retrofit2.Call;
 import retrofit2.Callback;
