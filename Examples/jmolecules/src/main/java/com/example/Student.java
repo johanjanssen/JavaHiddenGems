@@ -2,6 +2,7 @@ package com.example;
 
 
 import com.example.Student.StudentId;
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Value;
 import org.jmolecules.ddd.types.AggregateRoot;

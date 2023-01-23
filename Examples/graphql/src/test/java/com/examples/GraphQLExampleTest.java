@@ -11,6 +11,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//https://refactorfirst.com/spring-boot-with-graphql
 @SpringBootTest(classes = GraphQLApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GraphQLExampleTest {
 

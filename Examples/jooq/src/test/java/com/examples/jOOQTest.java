@@ -1,7 +1,6 @@
 package com.examples;
 
 import com.examples.jooq.generated.tables.records.CarRecord;
-import org.jetbrains.annotations.NotNull;
 import org.jooq.DSLContext;
 import org.jooq.Result;
 import org.junit.jupiter.api.Test;
@@ -27,7 +26,7 @@ public class jOOQTest {
         CarRecord lamborghini = new CarRecord(2, "Lamborghini", "Diablo");
         saveCar(lamborghini);
 
-        Result<CarRecord> cars = retrieveCars();
+        Result<CarRecord> cars = dslContext.selectFrom(CAR).fetch();
         assertEquals(2, cars.size());
         assertEquals("Porsche", cars.get(0).getBrand());
         assertEquals("Lamborghini", cars.get(1).getBrand());
@@ -38,10 +37,5 @@ public class jOOQTest {
                 .set(CAR.ID, carRecord.getId())
                 .set(CAR.BRAND, carRecord.getBrand())
                 .set(CAR.MODEL, carRecord.getModel()).execute();
-    }
-
-    public @NotNull Result<CarRecord> retrieveCars() {
-        return dslContext.selectFrom(CAR)
-                .fetch();
     }
 }
