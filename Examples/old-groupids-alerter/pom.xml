@@ -35,10 +35,19 @@
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
                 <artifactId>oga-maven-plugin</artifactId>
-                <version>1.8.0</version>
+                <version>1.8.0</version><!-- 1.8.0 breaks as it still attempts to retrieve the definitions from the internet -->
                 <configuration>
                     <ogDefinitionsUrl>http://localhost:80/og-definitions.json</ogDefinitionsUrl>
+                    <ogUnofficialDefinitionsUrl>http://localhost:80/og-unofficial-definitions.json</ogUnofficialDefinitionsUrl>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
