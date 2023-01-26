@@ -23,5 +23,22 @@
             <version>3.12.3</version>
             <scope>test</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.bytebuddy</groupId>-->
+<!--            <artifactId>byte-buddy</artifactId>-->
+<!--            <version>1.12.22</version>-->
+<!--        </dependency>-->
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-Dnet.bytebuddy.experimental=true</argLine><!-- Needed as EqualsVerifier uses Byte Buddy which doesn't support Java 21 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
