@@ -4,18 +4,26 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
+        <module>assertj</module>
+        <module>autoservice</module>
+        <module>autovalue</module>
+        <module>classgraph</module>
+        <module>guice</module>
+        <module>jdbi</module>
+        <module>jlink</module>
+        <module>jpackage</module>
         <module>jooq</module>
         <module>graphql</module>
         <module>optaplanner</module>
         <module>jobrunr</module>
         <module>handlebars</module>
         <module>spark</module>
+        <module>mapstruct</module>
         <module>microstream</module>
         <module>jmolecules</module>
         <module>pitest</module>
         <module>javapoet</module>
         <module>archunit</module>
-        <module>others</module>
         <module>owasp-dependency-check</module>
         <module>maven-enforcer-plugin</module>
         <module>old-groupids-alerter</module>
@@ -31,12 +39,18 @@
         <module>itext</module>
         <module>jsoup</module>
         <module>libphonenumber</module>
+        <module>retrofit</module>
         <module>shedlock</module>
         <module>togglz</module>
         <module>dockerimages</module>
         <module>jreleaser</module>
         <module>jfrunit</module>
         <module>openrewrite</module>
+        <module>rest-assured</module>
+        <module>rest-easy</module>
+        <module>typesafe-config</module>
+        <module>vavr</module>
+        <module>wiremock</module>
     </modules>
 
     <parent>
@@ -88,28 +102,6 @@
                 <version>3.10.1</version>
                 <configuration>
                     <release>${java.version}</release>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.24</version>
-                        </path>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>1.5.3.Final</version>
-                        </path>
-                        <path>
-                            <groupId>com.google.auto.value</groupId>
-                            <artifactId>auto-value</artifactId>
-                            <version>1.10.1</version>
-                        </path>
-                        <path>
-                            <groupId>com.google.auto.service</groupId>
-                            <artifactId>auto-service</artifactId>
-                            <version>1.0.1</version>
-                        </path>
-                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 
@@ -117,12 +109,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M8</version>
-                <configuration>
-                    <!-- For Spark as the current version doesn't support Java 17-->
-                    <argLine>
-                        --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
-                    </argLine>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -499,6 +485,11 @@
                 <artifactId>wiremock</artifactId>
                 <version>3.0.0-beta-2</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.10.1</version>
             </dependency>
 
             <!-- Also see compiler-plugin annotationprocessor -->
