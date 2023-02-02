@@ -11,10 +11,6 @@
 
     <artifactId>maven-enforcer-plugin</artifactId>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <!-- Added as an duplicate example of a vulnerable dependency for the enforcer plugin -->

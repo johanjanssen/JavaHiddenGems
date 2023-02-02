@@ -12,8 +12,7 @@
     <artifactId>jooq</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -23,13 +22,8 @@
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
-            <artifactId>jooq-meta</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jooq</artifactId>
