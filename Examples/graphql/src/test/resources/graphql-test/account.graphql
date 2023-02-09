@@ -1,0 +1,6 @@
+query accountWithUser($id: ID) {
+    accountById(id: $id) {
+        id
+        number
+    }
+}

@@ -1,10 +1,10 @@
 type Query {
-  accountById(id: ID): Account
+    accountById(id: ID): Account
 }
 
 type Account {
   id: ID
-  name: String
+  number: Int
   user: User
 }
 
