@@ -1,6 +1,10 @@
 # JavaHiddenGems
 Make sure to start the Docker-webserver-cache container before running the OWASP dependency check or the Old GroupIds Alerter.
 
+## Apache PDFBox
+Create and change PDF files or extract content from PDF files
+https://pdfbox.apache.org/
+
 ## Apache POI
 Create, change and read files based on the Office Open XML standards (OOXML) such as Word and Excel files.
 https://poi.apache.org/
@@ -67,6 +71,8 @@ https://github.com/jknack/handlebars.java
 PDF library
 https://itextpdf.com/en
 Be aware of the quite limiting license: https://fossa.com/blog/open-source-software-licenses-101-agpl-license/
+
+Apache PDFBox may be used as an alternative.
 
 ## Jacoco
 Code coverage library.

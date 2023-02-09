@@ -27,6 +27,7 @@
     <build>
         <plugins>
             <!-- mvn biz.lermitage.oga:oga-maven-plugin:check -->
+            <!-- mvn verify -->
             <!-- First start the Docker cache container as the normal host gives some security issues-->
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
