@@ -18,7 +18,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.10.4</version>
+                <version>1.11.3</version>
                 <configuration>
                     <targetClasses>
                         <param>com.example.*</param>
@@ -30,6 +30,15 @@
                         <excludedTestClass>com.example**.*IT</excludedTestClass>
                     </excludedTestClasses>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>pit-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>

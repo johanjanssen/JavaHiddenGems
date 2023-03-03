@@ -77,7 +77,7 @@
 
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
         <version.org.optaplanner>8.22.1.Final</version.org.optaplanner>
     </properties>
 
