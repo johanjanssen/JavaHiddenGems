@@ -77,7 +77,7 @@ public class ArchUnitTest {
         assertEquals(expectedMessage, assertionError.getMessage().replaceAll("\\r\\n", "\n"));
     }
 
-    // Classes in the controller package cannot be used by any later.
+    // Classes in the controller package cannot be used by any layer.
     // Classes in the service package can be used by classes in the controller layer
     @Test
     void controllerShouldOnlyUseService() {
