@@ -14,7 +14,7 @@ public class AccountControllerTests {
     @Test
     void shouldGetFirstAccount() {
         this.graphQlTester
-                .documentName("account")
+                .documentName("account") // see the corresponding file under src/test/resources
                 .variable("id", "account-1")
                 .execute()
                 .path("accountById")
@@ -28,7 +28,7 @@ public class AccountControllerTests {
     @Test
     void shouldGetFirstAccountWithUser() {
         this.graphQlTester
-				.documentName("accountWithUser")
+				.documentName("accountWithUser")// see the corresponding file under src/test/resources
 				.variable("id", "account-1")
                 .execute()
                 .path("accountById")
