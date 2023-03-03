@@ -11,7 +11,6 @@
 
     <artifactId>jreleaser</artifactId>
 
-
     <build>
         <plugins>
             <!-- mvn jreleaser:config -->
@@ -21,11 +20,15 @@
             <plugin>
                 <groupId>org.jreleaser</groupId>
                 <artifactId>jreleaser-maven-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>1.5.0</version>
                 <configuration>
                     <gitRootSearch>true</gitRootSearch><!-- Needed as pom.xml is not in Git root directory -->
                     <jreleaser>
+                        <project>
+                            <copyright>Dummy</copyright>
+                        </project>
                         <release>
+
                             <github>
                                 <changelog><!-- Make sure at least one tag is present -->
                                     <enabled>true</enabled>

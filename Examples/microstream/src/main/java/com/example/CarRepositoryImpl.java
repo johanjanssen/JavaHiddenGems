@@ -1,6 +1,5 @@
-package com.examples;
+package com.example;
 
-import com.examples.shared.Car;
 import one.microstream.storage.embedded.types.EmbeddedStorage;
 import one.microstream.storage.embedded.types.EmbeddedStorageManager;
 import org.springframework.beans.factory.annotation.Value;

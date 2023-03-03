@@ -78,7 +78,6 @@
 
     <properties>
         <java.version>17</java.version>
-        <version.org.optaplanner>8.22.1.Final</version.org.optaplanner>
     </properties>
 
     <dependencies>
@@ -94,7 +93,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.examples.shared.CarApplication</mainClass>
+                    <mainClass>com.example.CarApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -363,14 +362,14 @@
             <dependency>
                 <groupId>org.togglz</groupId>
                 <artifactId>togglz-spring-boot-starter</artifactId>
-                <version>3.3.3</version>
+                <version>4.0.0-M1</version>
             </dependency>
 
             <!-- Togglz Admin Console -->
             <dependency>
                 <groupId>org.togglz</groupId>
                 <artifactId>togglz-console</artifactId>
-                <version>3.3.3</version>
+                <version>4.0.0-M1</version>
             </dependency>
             <!-- End Togglz -->
 

@@ -2,11 +2,10 @@ package com.examples.optaplanner.rest;
 
 import com.examples.optaplanner.domain.TimeTable;
 import com.examples.optaplanner.persistence.TimeTableRepository;
-import org.optaplanner.core.api.score.ScoreManager;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.solver.SolutionManager;
 import org.optaplanner.core.api.solver.SolverManager;
 import org.optaplanner.core.api.solver.SolverStatus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,18 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/timeTable")
 public class TimeTableController {
 
-    @Autowired
     private TimeTableRepository timeTableRepository;
-    @Autowired
     private SolverManager<TimeTable, Long> solverManager;
-    @Autowired
-    private ScoreManager<TimeTable, HardSoftScore> scoreManager;
+    private SolutionManager<TimeTable, HardSoftScore> solutionManager;
+
+    public TimeTableController(TimeTableRepository timeTableRepository, SolverManager<TimeTable, Long> solverManager, SolutionManager<TimeTable, HardSoftScore> solutionManager) {
+        this.timeTableRepository = timeTableRepository;
+        this.solverManager = solverManager;
+        this.solutionManager = solutionManager;
+    }
 
     @GetMapping()
     public TimeTable getTimeTable() {
         SolverStatus solverStatus = getSolverStatus();
         TimeTable solution = timeTableRepository.findById(TimeTableRepository.SINGLETON_TIME_TABLE_ID);
-        scoreManager.updateScore(solution);
+        solutionManager.update(solution);
         solution.setSolverStatus(solverStatus);
         return solution;
     }

@@ -24,6 +24,7 @@
     <build>
         <plugins>
             <!-- mvn verify -->
+            <!-- Local cache with CVE results in Docker is used for demo purposes so not internet connection is required.-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

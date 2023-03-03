@@ -24,7 +24,7 @@
             <!-- Make sure to specify the java.version property in the pom.xml -->
             <!-- mvn compile jib:build pushes to remote repo-->
             <!-- mvn compile jib:dockerBuild doesn't push to remote repo -->
-            <!-- Run the resulting image with Docker: docker run -p 8080:8080 javahiddengems -->
+            <!-- Run the resulting image with Docker: docker run -p 8081:8080 jibexample -->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
@@ -34,14 +34,14 @@
                         <image>jibexample</image>
                     </to>
                     <container>
-                        <mainClass>com.examples.shared.CarApplication</mainClass>
+                        <mainClass>com.example.CarApplication</mainClass>
                     </container>
                 </configuration>
             </plugin>
 
             <!-- Make sure to specify the java.version property in the pom.xml -->
             <!-- Buildpack, no pom change needed: mvn spring-boot:build-image -Dmaven.test.skip -Dspring-boot.build-image.imageName=buildpackexample-->
-            <!-- Run the resulting image with Docker: docker run -p 8080:8080 buildpackjavahiddengems -->
+            <!-- Run the resulting image with Docker: docker run -p 8082:8080 buildpackexample -->
 
 
             <!-- jibexample ... 342MB -->

@@ -1,4 +1,4 @@
-package com.examples.shared;
+package com.example;
 
 import java.util.List;
 

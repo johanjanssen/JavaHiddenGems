@@ -1,6 +1,4 @@
-package com.examples;
-
-import com.examples.shared.Car;
+package com.example;
 
 import java.util.List;
 

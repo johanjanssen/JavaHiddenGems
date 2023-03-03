@@ -64,7 +64,7 @@ public class ConferenceConstraintsProvider implements ConstraintProvider {
                 .filter((lesson1, lesson2) -> {
                     Duration between = Duration.between(lesson1.getTimeslot().getEndTime(),
                             lesson2.getTimeslot().getStartTime());
-                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0;
+                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0; // Because of the lunch in between a fourth session isn't always planned consecutive
                 })
                 .reward("Speaker time efficiency", HardSoftScore.ONE_SOFT);
     }

@@ -1,4 +1,4 @@
-package com.examples.shared;
+package com.example;
 
 public class CarPart {
 
