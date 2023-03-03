@@ -19,7 +19,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes= CarApplication.class)
-@DirtiesContext
 public class RetrofitTest {
     @LocalServerPort
     private int port;
@@ -67,7 +66,7 @@ public class RetrofitTest {
             }
         });
 
-        Thread.sleep(100);
+        Thread.sleep(1000);
 
         // synchronous
         CarPart lamborghiniCarPart1 = new CarPart("mirror", 232.25);

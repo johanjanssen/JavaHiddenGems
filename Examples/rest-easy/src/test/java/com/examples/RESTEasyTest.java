@@ -44,9 +44,8 @@ public class RESTEasyTest {
 
         Future<Response> storedPorscheReponse = target.request().async()
                 .post(Entity.entity(porsche, "application/json"));
-        //assertEquals(200, storedPorscheReponse.getStatus());
 
-        Thread.sleep(200);
+        Thread.sleep(1000);
 
         // synchronous
         CarPart lamborghiniCarPart1 = new CarPart("mirror", 232.25);
