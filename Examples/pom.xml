@@ -18,7 +18,7 @@
         <module>optaplanner</module>
         <module>jobrunr</module>
         <module>handlebars</module>
-        <module>spark</module>
+        <module>apache-spark</module>
         <module>mapstruct</module>
         <module>microstream</module>
         <module>jmolecules</module>
