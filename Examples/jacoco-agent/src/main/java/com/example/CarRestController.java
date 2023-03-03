@@ -29,4 +29,10 @@ public class CarRestController {
         return car;
 
     }
+
+    @GetMapping("/exit")
+    public void exit() {
+        System.exit(1);
+    }
+
 }
