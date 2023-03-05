@@ -1,4 +1,4 @@
-query accountWithUser($id: ID) {
+query account($id: ID) {
     accountById(id: $id) {
         id
         number
