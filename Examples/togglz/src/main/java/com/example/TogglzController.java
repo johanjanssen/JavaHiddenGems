@@ -25,7 +25,7 @@ public class TogglzController {
     @GetMapping("awesome")
     public String awesome() {
         if (featureManager.isActive(AWESOME)) {
-            return "Newest coolest feature";
+            return "Awesome feature";
         } else {
             return "";
         }
@@ -34,7 +34,7 @@ public class TogglzController {
     @GetMapping("almostready")
     public String almostready() {
         if (featureManager.isActive(ALMOST_READY)) {
-            return "Newest coolest feature";
+            return "Almost ready feature";
         } else {
             return "";
         }
