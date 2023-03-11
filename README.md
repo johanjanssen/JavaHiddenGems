@@ -241,7 +241,7 @@ Creates pull requests to update the dependencies.
 https://docs.renovatebot.com/java/
 
 ## Dependabot
-Creates pull requests to update the dependencies. Built in Github
+Creates pull requests to update the dependencies.
 https://docs.github.com/en/code-security/dependabot
 
 ## Resilience4j
