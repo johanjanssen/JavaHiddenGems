@@ -240,6 +240,10 @@ The [Pitest](https://pitest.org/)
 Creates pull requests to update the dependencies.
 https://docs.renovatebot.com/java/
 
+## Dependabot
+Creates pull requests to update the dependencies. Built in Github
+https://docs.github.com/en/code-security/dependabot
+
 ## Resilience4j
 Fault tolerance library.
 https://github.com/resilience4j/resilience4j
