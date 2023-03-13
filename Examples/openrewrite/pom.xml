@@ -15,6 +15,10 @@
     mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
       -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:LATEST \
       -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.java.cleanup.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
+
+    mvn -U org.openrewrite.maven:rewrite-maven-plugin:run ^
+      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:LATEST ^
+      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.java.cleanup.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
     -->
 
     <dependencies>
