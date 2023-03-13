@@ -11,6 +11,11 @@
 
     <artifactId>openrewrite</artifactId>
 
+    <!--
+    mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:LATEST \
+      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.java.cleanup.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
+    -->
 
     <dependencies>
         <dependency>
@@ -21,54 +26,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <!-- mvn rewrite:run -->
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.38.2</version>
-                <configuration>
-                    <activeRecipes>
-                        <recipe>org.openrewrite.java.format.AutoFormat</recipe>
-                        <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
-                    </activeRecipes>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-spring</artifactId>
-                        <version>4.31.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-stdlib</artifactId>
-                        <version>1.8.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <!-- Needed as OpenRewrite uses JDK internals -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>mvn</executable>
-                    <arguments>
-                        <argument>rewrite:run</argument>
-                    </arguments>
-                    <environmentVariables>
-                        <MAVEN_OPTS> --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</MAVEN_OPTS>
-                    </environmentVariables>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

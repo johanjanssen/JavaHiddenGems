@@ -5,9 +5,8 @@ public class Main {
         System.out.println("Hello world!");
             System.out.println("Crappy formatting");
 
-        String exampleText = "example";
         String nullText = null;
-        if (nullText.equals(exampleText)) {
+        if (nullText.equals("example")) {
             System.out.println("This breaks");
         }
     }
