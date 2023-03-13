@@ -219,6 +219,8 @@ Detect publicly disclosed vulnerabilities in dependencies.
 https://jeremylong.github.io/DependencyCheck/dependency-check-maven/
 https://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html
 
+**Be aware that the plugin uses a CVE database and that one has some changes coming in the endpoints such as rate limits and an API key: https://nvd.nist.gov/General/News/changes-to-feeds-and-apis. Google also has a CVE database https://github.com/github/advisory-database#license but it looks like there's no (Maven) plugin for it yet.**
+
 ## Passay
 Library to enforce rules for passwords.
 https://www.passay.org/
