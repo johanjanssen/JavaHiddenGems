@@ -1,6 +1,0 @@
-query account($id: ID) {
-    accountById(id: $id) {
-        id
-        number
-    }
-}

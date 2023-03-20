@@ -10,6 +10,12 @@
 
     <artifactId>graphql</artifactId>
 
+    <properties>
+        <graphql-dgs-codegen-client-core.version>5.1.17</graphql-dgs-codegen-client-core.version>
+        <graphqlcodegen-maven-plugin.version>1.30</graphqlcodegen-maven-plugin.version>
+        <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -20,5 +26,55 @@
             <artifactId>spring-graphql-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.netflix.graphql.dgs.codegen</groupId>
+            <artifactId>graphql-dgs-codegen-client-core</artifactId>
+            <version>${graphql-dgs-codegen-client-core.version}</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.deweyjose</groupId>
+                <artifactId>graphqlcodegen-maven-plugin</artifactId>
+                <version>${graphqlcodegen-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <packageName>com.example.graphql.model</packageName>
+                    <schemaPaths>
+                        <path>src/main/resources/graphql</path>
+                    </schemaPaths>
+                    <generateBoxedTypes>true</generateBoxedTypes>
+                    <generateClientApi>true</generateClientApi>
+                    <writeToFiles>true</writeToFiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${build-helper-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>01-add-test-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
