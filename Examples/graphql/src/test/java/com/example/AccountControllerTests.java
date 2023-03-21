@@ -25,14 +25,13 @@ public class AccountControllerTests {
                 AccountByIdGraphQLQuery.newRequest().id("account-1").build()
                 , new AccountByIdProjectionRoot().id().number() );
         // act
-        GraphQlTester.Entity<Account, ?> accountById = this.graphQlTester
+        Account accountById = this.graphQlTester
                 .document(graphQLQueryRequest.serialize())
-                .execute().path("accountById").entity(Account.class);
+                .execute().path("accountById").entity(Account.class).get();
         // assert
-        assertEquals("account-1", accountById.get().getId());
-        assertEquals(42, accountById.get().getNumber());
-        assertNull(accountById.get().getUser());
-
+        assertEquals("account-1", accountById.getId());
+        assertEquals(42, accountById.getNumber());
+        assertNull(accountById.getUser());
     }
     @Test
     void shouldGetFirstAccountWithUser() {
@@ -41,13 +40,13 @@ public class AccountControllerTests {
                 AccountByIdGraphQLQuery.newRequest().id("account-1").build()
                 , new AccountByIdProjectionRoot().id().number().user().firstName().lastName() );
         // act
-        GraphQlTester.Entity<Account, ?> accountById = this.graphQlTester
+        Account accountById = this.graphQlTester
                 .document(graphQLQueryRequest.serialize())
-                .execute().path("accountById").entity(Account.class);
+                .execute().path("accountById").entity(Account.class).get();
         // assert
-        assertEquals("account-1", accountById.get().getId());
-        assertEquals(42, accountById.get().getNumber());
-        assertEquals("James", accountById.get().getUser().getFirstName());
-        assertEquals("Gosling", accountById.get().getUser().getLastName());
+        assertEquals("account-1", accountById.getId());
+        assertEquals(42, accountById.getNumber());
+        assertEquals("James", accountById.getUser().getFirstName());
+        assertEquals("Gosling", accountById.getUser().getLastName());
     }
 }
