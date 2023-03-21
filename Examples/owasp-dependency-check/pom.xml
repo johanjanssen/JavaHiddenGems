@@ -25,23 +25,24 @@
         <plugins>
             <!-- mvn verify -->
             <!-- Local cache with CVE results in Docker is used for demo purposes so not internet connection is required.-->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>start-docker-cache</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                           <executable>${project.parent.basedir}\Docker-webserver-cache\run.cmd</executable>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>exec-maven-plugin</artifactId>-->
+<!--                <version>3.1.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>start-docker-cache</id>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>exec</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                           <executable>${project.parent.basedir}\Docker-webserver-cache\run.cmd</executable>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <!-- Configured to run without an internet connection. -->
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
@@ -52,6 +53,8 @@
                     <cveUrlBase>http://localhost:80/nvdcve-1.1-%d.json.gz</cveUrlBase>
                     <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>
                     <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
                 </configuration>
                 <executions>
                     <execution>
