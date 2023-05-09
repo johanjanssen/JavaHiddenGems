@@ -9,6 +9,7 @@ import org.optaplanner.core.api.score.stream.Joiners;
 
 import java.time.Duration;
 
+// OptaPlanner is forked by the creator and now it's called Timefold
 public class ConferenceConstraintsProvider implements ConstraintProvider {
 
     @Override
