@@ -210,10 +210,6 @@ https://github.com/jonathanlermitage/oga-gradle-plugin
 Seach and transform Java applications, for instance to update frameworks, or to migrate to other frameworks.
 https://docs.openrewrite.org/
 
-## OptaPlanner
-Solve planning and scheduling challenges such as vehicle routing, rostering, create schedules etcetera.
-https://www.optaplanner.org/
-
 ## (OWASP) Dependency Check Maven / (OWASP) Dependency Check Gradle
 Detect publicly disclosed vulnerabilities in dependencies.
 https://jeremylong.github.io/DependencyCheck/dependency-check-maven/
@@ -280,6 +276,10 @@ https://github.com/apache/spark
 Provides database, Selenium and many other containers to test against in unit tests.
 https://www.testcontainers.org/
 https://github.com/testcontainers/testcontainers-java
+
+## Timefold
+Solve planning and scheduling challenges such as vehicle routing, rostering, create schedules etcetera.
+https://timefold.ai/
 
 ## Togglz
 Feature flaggs.

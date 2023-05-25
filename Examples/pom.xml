@@ -15,7 +15,7 @@
         <module>jpackage</module>
         <module>jooq</module>
         <module>graphql</module>
-        <module>optaplanner</module>
+        <module>timefold</module>
         <module>jobrunr</module>
         <module>handlebars</module>
         <module>apache-spark</module>
