@@ -23,7 +23,17 @@
         <!-- Also see application.properties -->
         <dependency>
             <groupId>org.jobrunr</groupId>
-            <artifactId>jobrunr-spring-boot-starter</artifactId>
+            <artifactId>jobrunr-spring-boot-3-starter</artifactId>
+        </dependency>
+
+        <!-- Used for easy bootstrapping of the SQL Storage Provider -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
     </dependencies>
 

@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 
-// Also see http://localhost:8001/
+// Also see http://localhost:8000/
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = JobRunrApplication.class)
 public class JobRunrTest {
 
@@ -23,7 +23,6 @@ public class JobRunrTest {
 
     @Test
     void testJobRunr() throws InterruptedException {
-
         jobScheduler.enqueue(() -> System.out.println(" Enqueued job"));
 
         jobScheduler.schedule(LocalDateTime.now().plusSeconds(2), () -> System.out.println(" Scheduled job"));
@@ -31,6 +30,7 @@ public class JobRunrTest {
         jobScheduler.scheduleRecurrently(Cron.every15seconds(), () -> System.out.println("Recurring job"));
 
         jobScheduler.enqueue(() -> jobRunrService.annotatedJob("retry"));
+
         Thread.sleep(30000);
     }
 }
