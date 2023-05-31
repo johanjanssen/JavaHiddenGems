@@ -175,8 +175,8 @@
             <!-- Also see application.properties -->
             <dependency>
                 <groupId>org.jobrunr</groupId>
-                <artifactId>jobrunr-spring-boot-starter</artifactId>
-                <version>5.3.3</version>
+                <artifactId>jobrunr-spring-boot-3-starter</artifactId>
+                <version>6.2.0</version>
             </dependency>
 
             <!-- jOOQ -->
