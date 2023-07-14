@@ -19,7 +19,7 @@ public class PassayTest {
             // Contains at least one symbol (special character)
             new CharacterRule(EnglishCharacterData.Special, 1),
 
-            // Doesn't contain a sequence of 5 or more characters
+            // Doesn't contain a sequence of 3 or more characters
             new IllegalSequenceRule(EnglishSequenceData.Numerical, 3, false),
 
             // Doesn't contain whitespaces
