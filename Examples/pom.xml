@@ -47,6 +47,7 @@
         <module>jreleaser</module>
         <module>jfrunit</module>
         <module>openrewrite</module>
+        <module>pebble-templates</module>
         <module>rest-assured</module>
         <module>rest-easy</module>
         <module>typesafe-config</module>
@@ -419,6 +420,12 @@
                 <groupId>io.vavr</groupId>
                 <artifactId>vavr</artifactId>
                 <version>0.10.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.pebbletemplates</groupId>
+                <artifactId>pebble</artifactId>
+                <version>3.2.1</version>
             </dependency>
 
             <!-- REST-assured -->

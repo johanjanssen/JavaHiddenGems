@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block specificFunction %}
+<h1>{{functionTitle}}</h1>
+Expected knowledge:
+<ul>
+  {% for expertise in expertiseList %}
+  <li>{{expertise.technology}} (years of experience {{expertise.years}})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

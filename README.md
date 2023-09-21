@@ -64,7 +64,7 @@ Query language for APIs.
 https://www.graphql-java.com/
 
 ## Handlebars.java
-Merge data with Mustache/Handlebars templates.
+Merge data with Mustache/Handlebars templates. Comparable to Pebble Templates.
 https://github.com/jknack/handlebars.java
 
 ## iText
@@ -220,6 +220,10 @@ https://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html
 ## Passay
 Library to enforce rules for passwords.
 https://www.passay.org/
+
+## Pebble Templates
+Templating engine comparable to Handlebars
+https://pebbletemplates.io/
 
 ## picocli
 One file framework to create Java command line applications.
