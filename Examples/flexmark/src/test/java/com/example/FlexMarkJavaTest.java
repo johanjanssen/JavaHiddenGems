@@ -35,7 +35,7 @@ public class FlexMarkJavaTest {
 
     public void visit(Text text) {
         String line = text.getChars().toString();
-        if (line.contains("https://github.com/")) {
+        if (line.contains("https://github.com/") && !line.startsWith("Be aware")) {
             gitHubRepositories.add(line);
         }
 
@@ -59,13 +59,13 @@ public class FlexMarkJavaTest {
         Parser parser = Parser.builder(options).build();
         Node document = parser.parse(markdown);
         visitor.visit(document);
-        assertEquals(69, topicCount);
-        assertEquals(19, uniqueStartingCharactersSet.size());
+        assertEquals(71, topicCount);
+        assertEquals(20, uniqueStartingCharactersSet.size());
 
         String alphabetString = uniqueStartingCharactersSet.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining());
-        assertEquals("abcefghijlmoprstuvw", alphabetString);
+        assertEquals("abcdefghijlmoprstuvw", alphabetString);
 
         testGitHubLinks();
     }
