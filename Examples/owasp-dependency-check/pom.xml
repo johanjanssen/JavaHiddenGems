@@ -46,7 +46,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>8.0.1</version>
+                <version>8.4.3</version>
                 <configuration>
                     <cveStartYear>2020</cveStartYear>
                     <cveUrlModified>http://localhost:80/nvdcve-1.1-modified.json.gz</cveUrlModified>
