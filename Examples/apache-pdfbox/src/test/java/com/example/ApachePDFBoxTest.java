@@ -5,6 +5,7 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -19,14 +20,12 @@ public class ApachePDFBoxTest {
         PDPage page = new PDPage();
         document.addPage( page );
 
-        PDFont font = PDType1Font.COURIER_BOLD;
-
         PDPageContentStream contentStream = new PDPageContentStream(document, page);
 
         contentStream.beginText();
-        contentStream.setFont( font, 14 );
-        contentStream.moveTextPositionByAmount( 100, 500 );
-        contentStream.drawString( "Hello conference" );
+        contentStream.newLineAtOffset(100, 500);
+        contentStream.setFont(new PDType1Font(Standard14Fonts.FontName.COURIER_BOLD), 14 );
+        contentStream.showText("Hello conference");
         contentStream.endText();
 
         contentStream.close();
