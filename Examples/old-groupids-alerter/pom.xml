@@ -32,7 +32,7 @@
             <plugin>
                 <groupId>biz.lermitage.oga</groupId>
                 <artifactId>oga-maven-plugin</artifactId>
-                <version>1.8.0</version><!-- 1.8.0 breaks as it still attempts to retrieve the definitions from the internet -->
+                <version>1.8.1</version><!-- 1.8.0 breaks as it still attempts to retrieve the definitions from the internet -->
                 <configuration>
                     <ogDefinitionsUrl>http://localhost:80/og-definitions.json</ogDefinitionsUrl><!-- For demo purposes, we cache the definitions so internet access is not needed. -->
                     <ogUnofficialDefinitionsUrl>http://localhost:80/og-unofficial-definitions.json</ogUnofficialDefinitionsUrl><!-- For demo purposes, we cache the definitions so internet access is not needed. -->
