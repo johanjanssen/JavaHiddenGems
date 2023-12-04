@@ -315,7 +315,7 @@
             <dependency>
                 <groupId>net.javacrumbs.shedlock</groupId>
                 <artifactId>shedlock-spring</artifactId>
-                <version>5.1.0</version>
+                <version>5.10.0</version>
             </dependency>
             <!-- More for testing, normally use a better storage solution -->
             <dependency>
