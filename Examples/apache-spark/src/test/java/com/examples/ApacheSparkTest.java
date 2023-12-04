@@ -31,13 +31,10 @@ public class ApacheSparkTest {
         Encoder<Review> reviewEncoder = Encoders.bean(Review.class);
 
         Dataset<Review> amazonDataSet = spark.read().option("multiLine", false).json(amazonDatasetFile).select("reviewText", "reviewerID").as(reviewEncoder);
-        amazonDataSet.printSchema();
 
         Dataset<Review> filteredSet = amazonDataSet.filter((FilterFunction<Review>) a -> a.getReviewText().contains("Java Programming Language"));
 
         assertEquals(28, filteredSet.count());
-
-        filteredSet.show((int) filteredSet.count(), false);
 
         Instant finish = Instant.now();
         Duration duration = Duration.between(start, finish);

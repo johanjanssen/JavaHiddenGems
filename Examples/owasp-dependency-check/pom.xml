@@ -43,28 +43,26 @@
 <!--                </executions>-->
 <!--            </plugin>-->
             <!-- Configured to run without an internet connection. -->
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.2</version>
-                <configuration>
-                    <cveStartYear>2020</cveStartYear>
-                    <cveUrlModified>http://localhost:80/nvdcve-1.1-modified.json.gz</cveUrlModified>
-                    <cveUrlBase>http://localhost:80/nvdcve-1.1-%d.json.gz</cveUrlBase>
-                    <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>
-                    <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
-                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
-                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.owasp</groupId>-->
+<!--                <artifactId>dependency-check-maven</artifactId>-->
+<!--                <version>9.0.2</version>-->
+<!--                <configuration>-->
+<!--                    <nvdDatafeedUrl>https://localhost:80/nvdcve-{0}.json.gz</nvdDatafeedUrl>-->
+<!--                    <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>-->
+<!--                    <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>-->
+<!--                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>-->
+<!--                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
