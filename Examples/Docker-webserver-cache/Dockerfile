@@ -17,5 +17,5 @@ RUN wget --no-check-certificate https://www.cisa.gov/sites/default/files/feeds/k
 RUN wget https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-definitions.json --no-check-certificate
 RUN wget https://raw.githubusercontent.com/jonathanlermitage/oga-maven-plugin/master/uc/og-unofficial-definitions.json --no-check-certificate
 
-FROM nginx:1.23.3-alpine
+FROM nginx:1.25.3-alpine
 COPY --from=java /mirror /usr/share/nginx/html
