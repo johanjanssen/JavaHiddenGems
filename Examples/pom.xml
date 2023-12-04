@@ -296,7 +296,7 @@
             <dependency>
                 <groupId>one.microstream</groupId>
                 <artifactId>microstream-storage-embedded</artifactId>
-                <version>08.00.00-MS-EA1</version>
+                <version>08.01.01-MS-GA</version>
             </dependency>
             <dependency>
                 <groupId>one.microstream</groupId>
