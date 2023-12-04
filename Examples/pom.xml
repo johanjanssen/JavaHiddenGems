@@ -463,7 +463,7 @@
             <dependency>
                 <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-client</artifactId>
-                <version>6.2.2.Final</version>
+                <version>6.2.6.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.resteasy</groupId>
