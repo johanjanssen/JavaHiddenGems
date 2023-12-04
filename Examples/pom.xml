@@ -321,7 +321,7 @@
             <dependency>
                 <groupId>net.javacrumbs.shedlock</groupId>
                 <artifactId>shedlock-provider-inmemory</artifactId>
-                <version>5.1.0</version>
+                <version>5.10.0</version>
             </dependency>
             <!-- End ShedLock -->
 
