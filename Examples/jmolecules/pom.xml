@@ -57,7 +57,7 @@
             <plugin>
                 <groupId>net.bytebuddy</groupId>
                 <artifactId>byte-buddy-maven-plugin</artifactId>
-                <version>1.12.22</version>
+                <version>1.14.10</version>
                 <executions>
                     <execution>
                         <goals>
