@@ -15,7 +15,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <version.ai.timefold.solver>0.9.38</version.ai.timefold.solver>
+        <version.ai.timefold.solver>0.9.39</version.ai.timefold.solver>
     </properties>
 
     <dependencies>
