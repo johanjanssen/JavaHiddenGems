@@ -349,7 +349,7 @@
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
                 <artifactId>janino</artifactId>
-                <version>3.0.8</version>
+                <version>3.1.11</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.janino</groupId>
