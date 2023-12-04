@@ -399,7 +399,7 @@
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
-                <version>1.5.3.Final</version>
+                <version>1.5.5.Final</version>
             </dependency>
 
             <!-- Also see the annotation processor in the maven-compiler-plugin -->
