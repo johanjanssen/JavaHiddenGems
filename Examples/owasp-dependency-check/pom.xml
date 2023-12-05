@@ -43,26 +43,26 @@
 <!--                </executions>-->
 <!--            </plugin>-->
             <!-- Configured to run without an internet connection. -->
-<!--            <plugin>-->
-<!--                <groupId>org.owasp</groupId>-->
-<!--                <artifactId>dependency-check-maven</artifactId>-->
-<!--                <version>9.0.2</version>-->
-<!--                <configuration>-->
-<!--                    <nvdDatafeedUrl>https://localhost:80/nvdcve-{0}.json.gz</nvdDatafeedUrl>-->
-<!--                    <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>-->
-<!--                    <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>-->
-<!--                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>-->
-<!--                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>check</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>9.0.2</version>
+                <configuration>
+                    <nvdDatafeedUrl>http://localhost:80/nvdcve-{0}.json.gz</nvdDatafeedUrl>
+                    <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>
+                    <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+                    <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
