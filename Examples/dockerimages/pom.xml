@@ -30,6 +30,9 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.4.0</version>
                 <configuration>
+                    <from> <!-- Currently the plugin doesn't detect Java 21 automatically. -->
+                        <image>eclipse-temurin:21-jre</image>
+                    </from>
                     <to>
                         <image>jibexample</image>
                     </to>
