@@ -1,6 +1,10 @@
 # JavaHiddenGems
 Make sure to start the Docker-webserver-cache container before running the OWASP dependency check or the Old GroupIds Alerter.
 
+## Apache Maven Build Cache Extension
+Cache Maven builds to make them faster
+https://maven.apache.org/extensions/maven-build-cache-extension/
+
 ## Apache PDFBox
 Create and change PDF files or extract content from PDF files
 https://pdfbox.apache.org/
@@ -48,7 +52,7 @@ Testing equals() and hashCode().
 https://jqno.nl/equalsverifier/
 
 ## flexmark-java
-Parse markdown and render to HTML.
+Parse markdown and render to HTML. See the build/extensions configuration in the Examples/pom.xml file
 https://github.com/vsch/flexmark-java
 
 ## Gatling
