@@ -295,7 +295,7 @@
             <dependency>
                 <groupId>com.googlecode.libphonenumber</groupId>
                 <artifactId>carrier</artifactId>
-                <version>1.210</version>
+                <version>1.224</version>
             </dependency>
             <!-- End libphonenumber -->
 
