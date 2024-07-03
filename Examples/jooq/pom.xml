@@ -43,7 +43,7 @@
                        Import the others manually from your distribution -->
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta-extensions</artifactId>
-            <version>3.18.7</version>
+            <version>3.19.10</version>
         </dependency>
     </dependencies>
 
