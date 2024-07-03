@@ -20,7 +20,7 @@
             <plugin>
                 <groupId>org.jreleaser</groupId>
                 <artifactId>jreleaser-maven-plugin</artifactId>
-                <version>1.9.0</version>
+                <version>1.13.1</version>
                 <configuration>
                     <gitRootSearch>true</gitRootSearch><!-- Needed as pom.xml is not in Git root directory -->
                     <jreleaser>
