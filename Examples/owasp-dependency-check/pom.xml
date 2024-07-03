@@ -46,7 +46,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.2</version>
+                <version>10.0.1</version>
                 <configuration>
                     <nvdDatafeedUrl>http://localhost:80/nvdcve-{0}.json.gz</nvdDatafeedUrl>
                     <knownExploitedUrl>http://localhost:80/known_exploited_vulnerabilities.json</knownExploitedUrl>
