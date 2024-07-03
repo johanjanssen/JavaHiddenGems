@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>one.microstream</groupId>
                 <artifactId>microstream-storage-embedded-configuration</artifactId>
-                <version>08.01.01-MS-GA</version>
+                <version>08.01.02-MS-GA</version>
             </dependency>
             <!-- End MicroStream -->
 
