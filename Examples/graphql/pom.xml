@@ -12,7 +12,7 @@
 
     <properties>
         <graphql-dgs-codegen-client-core.version>5.1.17</graphql-dgs-codegen-client-core.version>
-        <graphqlcodegen-maven-plugin.version>1.30</graphqlcodegen-maven-plugin.version>
+        <graphqlcodegen-maven-plugin.version>1.61.0</graphqlcodegen-maven-plugin.version>
         <build-helper-maven-plugin.version>3.5.0</build-helper-maven-plugin.version>
     </properties>
 
