@@ -276,7 +276,7 @@
             <dependency> <!-- Also see compiler-plugin -->
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.30</version>
+                <version>1.18.34</version>
                 <scope>provided</scope>
             </dependency>
             <!-- End jMolecules -->
