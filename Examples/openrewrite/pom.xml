@@ -12,13 +12,13 @@
     <artifactId>openrewrite</artifactId>
 
     <!--
-    mvn -U org.openrewrite.maven:rewrite-maven-plugin:4.42.0:run \
-      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.34.0 \
-      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.java.cleanup.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
+    mvn -U org.openrewrite.maven:rewrite-maven-plugin:5.34.1:run \
+      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2 \
+      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.staticanalysis.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
 
-    mvn -U org.openrewrite.maven:rewrite-maven-plugin:4.42.0:run ^
-      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.34.0 ^
-      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.java.cleanup.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
+    mvn -U org.openrewrite.maven:rewrite-maven-plugin:5.34.1:run ^
+      -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2 ^
+      -Drewrite.activeRecipes=org.openrewrite.java.format.AutoFormat,org.openrewrite.staticanalysis.EqualsAvoidsNull,org.openrewrite.java.testing.junit5.JUnit4to5Migration
     -->
 
     <dependencies>
