@@ -201,7 +201,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-jooq</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.1</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.jooq</groupId>
