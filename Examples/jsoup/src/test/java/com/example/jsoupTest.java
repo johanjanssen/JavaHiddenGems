@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class jsoupTest {
 
     @Test
@@ -19,6 +21,9 @@ public class jsoupTest {
             if (element.text().contains("Downloads of Packages")) {
                 String result = element.select("h4").get(0).text();
                 System.out.println("Number of downloads " + result);
+                String plainResult = result.replaceAll(",", "");
+                Integer integerResult = Integer.valueOf(plainResult);
+                assertTrue(Integer.valueOf(plainResult) > 3_000_000);
             }
         }
 

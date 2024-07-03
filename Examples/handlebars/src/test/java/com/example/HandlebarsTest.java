@@ -10,12 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 // see test/resources/HandlebarsExample.hbs
 public class HandlebarsTest {
     record Expertise(String technology, int years) {}
     record Person(String firstName, String lastName) {}
     record Vacancy(String title, Person person, String functionTitle, List<Expertise> expertiseList, int salary, int workinghours, int vacationdays) {}
-
 
     @Test
     void testHandlebars() throws IOException {
@@ -38,5 +39,6 @@ public class HandlebarsTest {
         String templateString = template.apply(vacancy);
 
         System.out.println(templateString);
+        assertTrue(templateString.contains("Janssen"));
     }
 }
