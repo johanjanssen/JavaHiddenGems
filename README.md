@@ -43,7 +43,7 @@ https://github.com/classgraph/classgraph
 
 ## Eclipse Deeplearning4j
 Suite of tools for deep learning on the JVM.
-https://projects.eclipse.org/proposals/eclipse-deeplearning4j
+https://projects.eclipse.org/projects/technology.deeplearning4j/
 https://www.rcp-vision.com/build-your-first-neural-network-with-eclipse-deeplearning4j/
 No example yet
 
