@@ -102,10 +102,6 @@ https://docs.oracle.com/en/java/java-components/jdk-mission-control/8/user-guide
 Collecting diagnostic and profiling data for a running application.
 https://developers.redhat.com/blog/2020/08/25/get-started-with-jdk-flight-recorder-in-openjdk-8u#using_jdk_flight_recorder_with_jdk_mission_control
 
-## JavaPoet
-Java API for generating .java source files.
-https://github.com/square/javapoet
-
 ## Jbang
 Edit and run source-only Java programs.
 https://www.jbang.dev/
