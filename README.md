@@ -299,11 +299,6 @@ Load and reload configuration such as property files.
 https://github.com/lightbend/config
 https://github.com/arkadius/tsc-reload
 
-## Update4j
-Auto update and launch desktop applications.
-https://github.com/update4j/update4j
-No example yet
-
 ## Vavr
 Functional library.
 https://www.vavr.io/
