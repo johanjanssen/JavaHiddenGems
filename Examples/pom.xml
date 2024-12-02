@@ -31,6 +31,7 @@
         <module>jacoco-agent</module>
         <module>flexmark</module>
         <module>gatling</module>
+        <module>gatling-kafka</module>
         <module>awaitility</module>
         <module>micrometer</module>
         <module>testcontainers</module>
