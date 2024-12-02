@@ -1,9 +1,8 @@
 package com.example;
 
-import com.squareup.javapoet.JavaFile;
-import com.squareup.javapoet.MethodSpec;
-import com.squareup.javapoet.TypeSpec;
-import org.junit.jupiter.api.BeforeAll;
+import com.palantir.javapoet.JavaFile;
+import com.palantir.javapoet.MethodSpec;
+import com.palantir.javapoet.TypeSpec;
 import org.junit.jupiter.api.Test;
 
 import javax.lang.model.element.Modifier;

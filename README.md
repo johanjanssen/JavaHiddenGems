@@ -103,8 +103,8 @@ Collecting diagnostic and profiling data for a running application.
 https://developers.redhat.com/blog/2020/08/25/get-started-with-jdk-flight-recorder-in-openjdk-8u#using_jdk_flight_recorder_with_jdk_mission_control
 
 ## JavaPoet
-Java API for generating .java source files.
-https://github.com/square/javapoet
+Java API for generating .java source files. Be careful the one from Square is no longer maintained. There are some alternatives such as for example the one below.
+https://github.com/palantir/javapoet
 
 ## Jbang
 Edit and run source-only Java programs.

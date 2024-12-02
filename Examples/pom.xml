@@ -228,9 +228,9 @@
             </dependency>
 
             <dependency>
-                <groupId>com.squareup</groupId>
+                <groupId>com.palantir.javapoet</groupId>
                 <artifactId>javapoet</artifactId>
-                <version>1.13.0</version>
+                <version>0.5.0</version>
             </dependency>
 
             <dependency>
