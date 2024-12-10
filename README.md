@@ -309,3 +309,9 @@ Create mock APIs.
 http://wiremock.org
 https://github.com/wiremock/wiremock
 
+## zxcvbn
+Password strength estimator. Several implementations exist for Java.
+https://github.com/nulab/zxcvbn4j
+https://github.com/GoSimpleLLC/nbvcxz
+
+

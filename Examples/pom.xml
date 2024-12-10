@@ -54,6 +54,7 @@
         <module>typesafe-config</module>
         <module>vavr</module>
         <module>wiremock</module>
+        <module>zxcvbn4j</module>
     </modules>
 
     <parent>
@@ -535,6 +536,12 @@
                 <version>0.6.1</version>
             </dependency>
             <!-- End TypeSafe config -->
+
+            <dependency>
+                <groupId>com.nulab-inc</groupId>
+                <artifactId>zxcvbn</artifactId>
+                <version>1.9.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
