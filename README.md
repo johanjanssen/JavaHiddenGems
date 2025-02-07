@@ -47,6 +47,14 @@ https://projects.eclipse.org/projects/technology.deeplearning4j/
 https://www.rcp-vision.com/build-your-first-neural-network-with-eclipse-deeplearning4j/
 No example yet
 
+## Eclipse Serializer
+Java serializer that does not require you to implement an interface or put annotations in your classes.
+https://github.com/eclipse-serializer/serializer
+
+## EclipseStore
+Java-native persistence
+https://github.com/eclipse-store/store
+
 ## EqualsVerifier
 Testing equals() and hashCode().
 https://jqno.nl/equalsverifier/
@@ -192,10 +200,6 @@ https://maven.apache.org/wrapper/
 ## Micrometer application monitoring
 Deliver application metrics from Spring Boot.
 https://micrometer.io/
-
-## MicroStream
-Java serializer that does not require you to implement an interface or put annotations in your classes.
-https://microstream.one/
 
 ## Moduliths
 Verify the modular structure for Spring Boot applications between modules based on ArchUnit.
